@@ -1,0 +1,61 @@
+
+@font-face {
+    font-family: "Brandon-Printed";
+    src: url("../fonts/BrandonPrinted-One-Shadow.otf") format("opentype");
+    /* src: url("../fonts/BrandonPrinted-Two-Shadow.otf") format("opentype"); */
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital@0;1&display=swap');
+
+
+body { 
+    color: #FFFFFF; 
+    background-color: #cbc4c4;
+    padding: 0;
+    margin: 0;
+}
+
+header, footer {
+  background-color: #292929;
+  font-family:'Brandon-Printed';
+  font-size: 18px;
+  font-style: normal;
+}
+header {
+    display: grid;
+    grid-template-columns: 33.333% 33.333% 33.333%;
+}
+footer {
+    padding: 2rem 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+footer .innerContainer {
+    margin: auto;
+    width: fit-content;
+}
+header .logo {
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+header .logo img {
+    width: 91px;
+    margin-left: 3.5rem;
+    height: -webkit-fill-available;
+}
+header .list {
+    display: flex;
+    width: fit-content;
+    gap: 4.875rem;
+    margin: auto;
+    grid-area: 1 / 2 / span 1 / span 1;
+    padding: 2.2rem 0;
+    white-space: nowrap;
+}
+header a {
+  cursor: pointer;
+  color: #FFFFFF; 
+  text-decoration: none;
+}
+
+.container {
+    background-color: #FFFFFF;
+    height: 5rem;
+}
