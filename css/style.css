@@ -49,7 +49,7 @@ header .list {
     margin: auto;
     grid-area: 1 / 2 / span 1 / span 1;
     padding: 2.2rem 0;
-    white-space: nowrap;
+    text-align: center;
 }
 header a {
   cursor: pointer;
@@ -97,8 +97,29 @@ header a {
     font-family:'Brandon-Printed';
     font-size: 50px;
     font-style: normal;
-    width: fit-content;
+    width: 100%;
 }
+
+@media screen and (max-width: 600px) {
+    .brandon {
+        font-size: 30px !important;
+    }
+    .redBrandon {
+        font-size: 30px !important;
+        padding: 1rem 0.5rem 0.5rem !important;
+    }
+}
+
+@media screen and (max-width: 368px) {
+     .two {
+        position: relative;
+        top: 0.5rem;
+    } 
+    .brandon {
+        margin: 3rem auto 0.5rem auto !important ;
+    }
+}
+
 
 .redBrandon {
     font-family:'Brandon-Printed';
@@ -114,22 +135,30 @@ header a {
 .nunito {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 18px;
-    width: fit-content;
+    width: 100%;
 }
 
 .firstText {
- margin: 5.375rem auto;
+ margin: 3.375rem auto 1.375rem;
+ padding-left: 1rem;
+ padding-right: 1rem;
  position: relative;
 }
 
 .firstText .brandon {
- margin: auto;
+ margin: 3rem auto auto;
+ text-align: center;
 }
 .firstText .nunito {
     margin: 2.26rem auto 1rem;
+    text-align: center; 
    }
+   .firstText .brandon span {
+    margin: 1rem auto;
+   } 
  .firstText .redBrandon {
     margin: 1.5rem auto;
+    text-align: center;
    }
    .firstText .two {
     background-image: url("../assets/svg/Vector\ 2.svg") ;
