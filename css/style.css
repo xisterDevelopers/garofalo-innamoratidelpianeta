@@ -123,32 +123,35 @@ header a {
     width: 100%;
 }
 
-.firstText {
+.text {
  margin: 3.375rem auto 1.375rem;
  padding-left: 1rem;
  padding-right: 1rem;
  position: relative;
 }
 
-.firstText .brandon {
+.text .brandon {
  margin: 3rem auto auto;
  text-align: center;
 }
-.firstText .nunito {
+.text .nunito {
     margin: 2.26rem auto 1rem;
     text-align: center; 
    }
-   .firstText .brandon span {
+   .text .brandon span {
     margin: 1rem auto;
    } 
- .firstText .redBrandon {
+ .text .redBrandon {
     margin: 1.5rem auto;
     text-align: center;
    }
-   .firstText .two {
+   .text .one {
+    background-image: url("../assets/svg/Vector\ 1.svg") ;
+   }
+   .text .two {
     background-image: url("../assets/svg/Vector\ 2.svg") ;
    }
-   .firstText .three {
+   .text .three {
     background-image: url("../assets/svg/Vector\ 3.svg") ;
    }
 .infograficaPasta {
