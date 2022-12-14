@@ -12,6 +12,7 @@ body {
     background-color: #cbc4c4;
     padding: 0;
     margin: 0;
+    font-weight: 400;
 }
 
 header, footer {
@@ -137,6 +138,7 @@ header a {
 .text .nunito {
     margin: 2.26rem auto 1rem;
     text-align: center; 
+    max-width: 800px;
    }
    .text .brandon span {
     margin: 1rem auto;
@@ -167,7 +169,28 @@ header a {
     text-align: center;
 }
 
+/* button */
 
+.button {
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin: 3rem auto;
+}
+.button a {
+    cursor: pointer;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    position: relative;
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: url("../assets/svg/Vector\ button.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+}
 /* animation */
 section {
     position: relative;
