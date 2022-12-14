@@ -191,6 +191,16 @@ header a {
     background-repeat: no-repeat;
     margin: auto;
 }
+
+/* line */
+.line {
+    position: relative;
+    width: 90%;
+    margin: 2rem auto;
+}
+.line img {
+    width: 100%;
+}
 /* animation */
 section {
     position: relative;
