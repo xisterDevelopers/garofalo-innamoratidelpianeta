@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     var ypos = window.pageYOffset;
     var height = window.innerHeight;
     var calc = ypos + height;
-    var iframeArr = document.getElementsByClassName("fullVideo");
-    for(let x = 0; x < iframeArr.length; x++) {
-        if(calc > (iframeArr[x].offsetTop + 200 ) )
-         iframeArr[x].classList.add("visibleFullVideo");
+    var sectionArr = document.getElementsByTagName("section");
+    for(let x = 0; x < sectionArr.length; x++) {
+        if(calc > (sectionArr[x].offsetTop + 200 ) )
+        sectionArr[x].classList.add("visible");
      }
 
 function Scroll () {
@@ -13,10 +13,10 @@ function Scroll () {
   var height = window.innerHeight;
   var calc = ypos + height;
 
-  var iframeArr = document.getElementsByClassName("fullVideo");
-    for(let x = 0; x < iframeArr.length; x++) {
-        if(calc > (iframeArr[x].offsetTop + 200 ) )
-         iframeArr[x].classList.add("visibleFullVideo");
+  var sectionArr = document.getElementsByTagName("section");
+    for(let x = 0; x < sectionArr.length; x++) {
+        if(calc > (sectionArr[x].offsetTop + 200 ) )
+        sectionArr[x].classList.add("visibleScroll");
      }
   }
 

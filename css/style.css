@@ -68,12 +68,7 @@ header a {
 .fullVideo iframe {
     border: none;
 }
-.fullVideo {
-    position: relative;
-    opacity: 0;
-    transform: translateY(200px);
-}
-/* .fullVideo::after {
+ .fullVideo::after {
    content: '';
    width: 100%;
    height: 100%;
@@ -81,17 +76,7 @@ header a {
    background-color: #02969F;
    top: 0;
    left: 0;
-} */
-.visibleFullVideo {
-    opacity: 1 !important;
-    transition-delay: 2s;
-    -webkit-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1) ;
-    -moz-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1);
-    -ms-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1);
-    -o-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1);
-    transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1);
-    transform: translateY(0);
-}
+} 
 
 .brandon {
     font-family:'Brandon-Printed';
@@ -172,4 +157,36 @@ header a {
 .infograficaPasta img {
     position: relative;
     width: 100%;
+    max-width: 1440px;
 }
+.infograficaPasta {
+    padding: 1rem 5rem;
+    text-align: center;
+}
+
+
+/* animation */
+section {
+    position: relative;
+    transform: translateY(200px); 
+}
+.visibleScroll {
+    opacity: 1 !important;
+    transition-delay: 2s;
+    -webkit-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1) ;
+    -moz-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1);
+    -ms-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1);
+    -o-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1);
+    transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 2s cubic-bezier(.19,1,.22,1);
+    transform: translateY(0);
+}
+.visible {
+    opacity: 1 !important;
+    transition-delay: 2s;
+    -webkit-transition: opacity 0s cubic-bezier(.19,1,.22,1), transform 0s cubic-bezier(.19,1,.22,1) ;
+    -moz-transition: opacity 0s cubic-bezier(.19,1,.22,1), transform 0s cubic-bezier(.19,1,.22,1);
+    -ms-transition: opacity 0s cubic-bezier(.19,1,.22,1), transform 0s cubic-bezier(.19,1,.22,1);
+    -o-transition: opacity 0s cubic-bezier(.19,1,.22,1), transform 0s cubic-bezier(.19,1,.22,1);
+    transition: opacity 0s cubic-bezier(.19,1,.22,1), transform 0s cubic-bezier(.19,1,.22,1);
+    transform: translateY(0);
+} 
