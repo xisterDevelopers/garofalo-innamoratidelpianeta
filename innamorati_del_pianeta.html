@@ -8,7 +8,16 @@
 </head>
   <body>
     <!--header -->
-    <header class="header">
+    <header class="header" id="header">
+      <div id="collapsedList" class="collpsedList">
+        <a title="lamore-è-impegno" 
+        onClick="scrollAncora('impegno')"
+        >L'amore è impegno</a>
+        <a title="lamore-è-fatto-di-gesti" 
+        onClick="scrollAncora('fattoDiGesti')"
+        >L'amore è fatto di gesti</a>
+      </div>
+      <div class="headerContainer">
       <div class="logo">
         <img alt="logo" src="assets/svg/logo-Garofalo.svg"></img>
       </div>
@@ -19,6 +28,12 @@
         <a title="lamore-è-fatto-di-gesti" 
         onClick="scrollAncora('fattoDiGesti')"
         >L'amore è fatto di gesti</a>
+      </div>
+      <button id="burger" type="button" class="burger"  onClick="collapse()">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       </div>
     </header>
     <!--fine header -->

@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
          if(calc > (infografica[x].offsetTop + 200 ) )
          infografica[x].classList.add("zoomOut");
       }
+
 function Scroll () {
   var ypos = window.pageYOffset;
   var height = window.innerHeight;
@@ -31,12 +32,44 @@ function Scroll () {
   }
   window.addEventListener("scroll", Scroll);
 
+
+  function handleClickOutside (event) {
+    var header = document.getElementById("header");
+   if(!header.contains(event.target)) {
+       collapse();
+   }
+  }
+  window.addEventListener("click", handleClickOutside, true);
+
 });
 
 
 function scrollAncora (id) {
+   
+  collapse();
+
   window.scroll({
     top: document.getElementById(id)?.getBoundingClientRect().top + window.scrollY,
     behavior: 'smooth'
   });
+
+}
+
+
+function collapse () {
+  var header = document.getElementById("header");
+  var collapsedList = document.getElementById("collapsedList");
+  var collapse = document.getElementById("burger");
+
+  if(collapse.classList.contains('collapse')) {
+    collapse.classList.remove("collapse");
+    collapsedList.classList.remove("collapsed");
+    header.classList.remove("collapsedHeader")
+  }
+  else {
+    collapse.classList.add('collapse');
+    collapsedList.classList.add('collapsed');
+    header.classList.add("collapsedHeader")
+  }
+
 }
