@@ -13,8 +13,12 @@
         <img alt="logo" src="assets/svg/logo-Garofalo.svg"></img>
       </div>
       <div class="list">
-        <a title="l'amore è impegno" href=”#”>L'amore è impegno</a>
-        <a title="l'amore è fatto di gesti" href=”#”>L'amore è fatto di gesti</a>
+        <a title="lamore-è-impegno" 
+        onClick="scrollAncora('impegno')"
+        >L'amore è impegno</a>
+        <a title="lamore-è-fatto-di-gesti" 
+        onClick="scrollAncora('fattoDiGesti')"
+        >L'amore è fatto di gesti</a>
       </div>
     </header>
     <!--fine header -->
@@ -25,7 +29,7 @@
       <section style="opacity: 0;">
       <div class="fullVideo">
         <iframe width="100%" height="100%"
-        src="https://www.youtube.com/embed/ECyvxaRINFE">
+        src="https://www.youtube.com/embed/ECyvxaRINFE?autoplay=1&amp;mute=1" allow='autoplay; encrypted-media' allowfullscreen showinfo="0" frameborder="0" autohide="1">
         </iframe>
         <!-- <video width="100%" height="100%" controls poster="assets/img/apple.jpeg">
           <source src="movie.mp4" type="video/mp4">
@@ -36,7 +40,7 @@
 
   <section style="opacity: 0;">
       <div class="text">
-        <div class="brandon">
+        <div class="brandon" id="impegno">
           <span>L'amore è </span>
           <span class="redBrandon one">impegno</span>
         </div>
@@ -47,7 +51,7 @@
     </section>
 
   <section style="opacity: 0;">
-      <div class="infograficaPasta">
+      <div style="transform: scale(2) translate(13rem, 28rem);" class="infograficaPasta">
        <img alt="infografica" src="assets/img/infograficaSostenibilitàDesktop.png"><img>
       </div>
     </section>
@@ -61,15 +65,15 @@
     <section style="opacity: 0;">
       <div class="text">
         <div class="redBrandon three">Compensiamo le emissioni</div>
-        <div class="nunito">Abbiamo aderito al progetto Impatto Zero di Lifegate per compensare le emissioni di CO2
+        <div class="nunito smallN">Abbiamo aderito al progetto Impatto Zero di Lifegate per compensare le emissioni di CO2
           legate alla produzione del packaging dei nostri prodotti</div>
       </div> 
     </section>
 
     <section style="opacity: 0;">
       <div class="text">
-        <div class="brandon">Le nostre altre iniziative sostenibili</div>
-        <div class="nunito">Dall'energia solare alle cannucce di pasta ecologiche, il nostro impegno per l'ambiente è molteplice e in continua evoluzione. Scopri quanto siamo innamorati del pianeta!</div>
+        <div class="brandon smallB">Le nostre altre iniziative sostenibili</div>
+        <div class="nunito smallN">Dall'energia solare alle cannucce di pasta ecologiche, il nostro impegno per l'ambiente è molteplice e in continua evoluzione. Scopri quanto siamo innamorati del pianeta!</div>
         <div class="button">
           <a href="#" title="button" class="red">visita il nostro sito</a>
         </div>
@@ -80,6 +84,42 @@
       <div class="line">
       <img alt="line" src="assets/svg/line.svg"></img>
     </div>
+    </section>
+
+    <section style="opacity: 0;">
+      <div class="text">
+        <div class="brandon">Innam<span class="bigB">ó</span>rati del pianeta</div>
+        <div class="brandon smallB" id="fattoDiGesti">
+          <span>L'amore è </span>
+          <span class="redBrandon four smallB">fatto di gesti</span>
+        </div>
+        <div class="nunito">Cosa possiamo fare insieme per il pianeta?</div>
+      </div> 
+    </section>
+
+    <section style="opacity: 0;">
+      <div class="flex">
+        <div class="column">
+          <div class="image"> <img alt="pentola" src="assets/svg/bicchiere.svg"></img></div>
+          <div class="text">
+            <div class="brandon smallB">Cucinare in modo consapevole</div>
+            <div class="nunito">Abbiamo raccolto una serie di tip e buone pratiche per aiutarti a compiere gesti sostenibili ai fornelli.
+              Ma vogliamo anche farti divertire...</div>
+              <div class="button">
+                <a href="#" title="button" class="red"> Gioca con noi</a>
+              </div>
+          </div> 
+        </div>
+
+        <div class="column">
+         <div class="image"> <img alt="bicchiere" src="assets/svg/bicchiere.svg"></img> </div>
+        <div class="text">
+          <div class="brandon smallB">Riciclare correttamente i pacchi garofalo</div>
+          <div class="nunito">Quando c'è amore nulla va distrutto: si ricicla! Il gesto finale è anche quello più importante. I nostri pack sono di plastica 100% RICICLABILE quindi conferiscili sempre nella raccolta differenziata della PLASTICA, un'attenzione che fa bene all'ambiente.</div>
+        </div> 
+        </div>
+      </div>
+
     </section>
 
   <section style="opacity: 0;">
@@ -98,7 +138,7 @@
       <!--fine body -->
       <!--footer -->
     <footer class="footer">
-      <div class="innerContainer">FOOTER footer</div>
+      <div class="innerContainer">FOOTER</div>
     </footer> 
      <!--fine footer -->
   </body> </html>

@@ -69,7 +69,7 @@ header a {
 .fullVideo iframe {
     border: none;
 }
- .fullVideo::after {
+ /* .fullVideo::after {
    content: '';
    width: 100%;
    height: 100%;
@@ -77,7 +77,7 @@ header a {
    background-color: #02969F;
    top: 0;
    left: 0;
-} 
+}  */
 
 .brandon {
     font-family:'Brandon-Printed';
@@ -85,27 +85,6 @@ header a {
     font-style: normal;
     width: 100%;
 }
-
-@media screen and (max-width: 600px) {
-    .brandon {
-        font-size: 30px !important;
-    }
-    .redBrandon {
-        font-size: 30px !important;
-        padding: 1rem 0.5rem 0.5rem !important;
-    }
-}
-
-@media screen and (max-width: 368px) {
-     .two {
-        position: relative;
-        top: 0.5rem;
-    } 
-    .brandon {
-        margin: 3rem auto 0.5rem auto !important ;
-    }
-}
-
 
 .redBrandon {
     font-family:'Brandon-Printed';
@@ -140,21 +119,25 @@ header a {
     text-align: center; 
     max-width: 800px;
    }
-   .text .brandon span {
+.text .brandon span {
     margin: 1rem auto;
+    line-height: 4rem;
    } 
  .text .redBrandon {
     margin: 1.5rem auto;
     text-align: center;
    }
-   .text .one {
+.text .one {
     background-image: url("../assets/svg/Vector\ 1.svg") ;
    }
-   .text .two {
+.text .two {
     background-image: url("../assets/svg/Vector\ 2.svg") ;
    }
-   .text .three {
+.text .three {
     background-image: url("../assets/svg/Vector\ 3.svg") ;
+   }
+.text .four {
+    background-image: url("../assets/svg/Vector\ 4.svg") ;
    }
 .infograficaPasta {
     position: relative;
@@ -169,8 +152,87 @@ header a {
     text-align: center;
 }
 
-/* button */
+.bigB {
+    font-size: 80px !important;
+}
+.smallB {
+    font-size: 40px !important;
+}
+ .smallN {
+    font-size: 16px !important;
+}
 
+.flex {
+    display: flex;
+    max-width: 1504px;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.flex .text {
+    margin-top: 0;
+}
+.flex .text .brandon {
+    text-align: left;
+    margin-top: 0 !important;
+}
+.flex .text .nunito {
+    text-align: left;
+}
+.flex .text .button a {
+    margin: 0;
+}
+.flex .column {
+    display: flex;
+    width: 50%;
+}
+
+/* media queries */
+
+@media screen and (max-width: 368px) {
+    .two {
+       position: relative;
+       top: 0.5rem;
+   } 
+   .brandon {
+       margin: 3rem auto 0.5rem auto !important ;
+   }
+}
+
+
+
+@media screen and (max-width: 950px) {
+    .flex {
+        flex-direction: column;
+    }
+    .column {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .flex .image {
+        margin: auto;
+    }
+    .flex .column {
+        width: 100% !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    .brandon {
+        font-size: 30px !important;
+    }
+    .redBrandon {
+        font-size: 30px !important;
+        padding: 1rem 0.5rem 0.5rem !important;
+    }
+}
+
+
+/* button */
 .button {
     width: 100%;
     display: flex;
@@ -190,6 +252,7 @@ header a {
     background-size: cover;
     background-repeat: no-repeat;
     margin: auto;
+    text-decoration: none;
 }
 
 /* line */
@@ -197,6 +260,7 @@ header a {
     position: relative;
     width: 90%;
     margin: 2rem auto;
+    max-width: 1440px;
 }
 .line img {
     width: 100%;
@@ -204,7 +268,17 @@ header a {
 /* animation */
 section {
     position: relative;
+    overflow: hidden;
     transform: translateY(200px); 
+}
+.zoomOut {
+    transform: scale(1) translate(0) !important;
+    transition-delay: 2s;
+    -webkit-transition: all 5s cubic-bezier(.19,1,.22,1);
+    -moz-transition: all 5s cubic-bezier(.19,1,.22,1);
+    -ms-transition: all 5s cubic-bezier(.19,1,.22,1);
+    -o-transition: all 5s cubic-bezier(.19,1,.22,1);
+    transition: all 5s cubic-bezier(.19,1,.22,1);
 }
 .visibleScroll {
     opacity: 1 !important;
@@ -226,3 +300,16 @@ section {
     transition: opacity 0s cubic-bezier(.19,1,.22,1), transform 0s cubic-bezier(.19,1,.22,1);
     transform: translateY(0);
 } 
+
+/* youtube */
+
+.fullVideo .ytp-more-videos-view {
+    overflow: hidden;
+    display: none !important; 
+}
+ .fullVideo .ytp-endscreen-content {
+    display: none !important;
+}
+.fullVideo .ytp-pause-overlay-container {
+    display: none !important;
+}
