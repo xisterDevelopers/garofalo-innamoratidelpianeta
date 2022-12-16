@@ -577,23 +577,11 @@ section {
   height: 100%;
 }
 .text:nth-child(1) .counter > span {
-  transition-delay: 0.5s;
+  transition-delay: 0.2s;
 }
 .text:nth-child(2) .counter > span {
-  transition-delay: 0.8s;
+  transition-delay: 0.5s;
 }
 .text:nth-child(3) .counter > span {
-  transition-delay: 1s;
-} 
-.text:nth-child(4) .counter > span {
-  transition-delay: 5.5s;
-} 
-.text:nth-child(5) .counter > span {
-  transition-delay: 5s;
-}
-.text:nth-child(6) .counter > span {
-  transition-delay: 6s;
-}
-.text:nth-child(7) .counter > span {
-  transition-delay: 7s;
+  transition-delay: 0.8s;
 }
