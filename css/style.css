@@ -589,3 +589,101 @@ section {
 .text:nth-child(3) .counter > span {
   transition-delay: 0.8s;
 }
+
+/* carousel  */
+  .horizontal-slider {
+    width: calc(100% - 2rem);
+    margin: 3rem 2rem 0;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .active {
+    scroll-snap-type: none;
+  }
+  .horizontal-slider::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+  .card {
+    position: relative;
+    margin-left: 0.5rem;
+    height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  .card .brandon {
+    color: #FFFFFF;
+    text-align: left;
+    width: fit-content;
+    padding: 0 80px;
+  }
+  
+  .card .absolute {
+    position: absolute;
+    width: 100%;
+    padding-top: 70px;
+  }
+  .card .impattoZero {
+    text-align: left;
+    height: 100%;
+  }
+  .card .impattoZero img {
+    padding-left: 80px;
+  }
+  .card .red .bigNumber {
+    font-size: 120px;
+    position: absolute;
+    left: -28px;
+    top: -28px
+  }
+  .card .red {
+    padding: 2rem 3rem 4rem;
+    left: 70px;
+    background: url('/assets/svg/bgTextSlide.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 503px;
+    color: #FFFFFF;
+    text-align: left;
+  }
+  .card .red .brandon {
+    padding: 0;
+  }
+  .card .red .nunito {
+    padding-top: 1rem;
+    line-height: 1.5rem;
+  }
+  .card .background {
+    max-width: 1200px;
+    width: 90vw;
+    position: relative;
+  }
+  
+  /* .card:nth-child(7n) {
+    background-color: tomato;
+  }
+   */
+  .hor-scroll .btn {
+    position: absolute;
+  
+    top: 185px;
+    transform: translateY(-50%);
+  
+    height: 30px;
+    width: 30px;
+  
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  
+    z-index: 1;
+  }
+  
