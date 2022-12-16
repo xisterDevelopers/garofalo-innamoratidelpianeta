@@ -70,7 +70,6 @@ footer .innerContainer {
   text-decoration: none;
 }
 
-
 .collpsedList {
     top: -100%; 
     margin: auto;
@@ -249,15 +248,130 @@ footer .innerContainer {
     display: flex;
     width: 50%;
 }
+.containerRicicloRed {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+}
+.ricicloRed {
+    background-image: url("/assets/svg/VectorRicicloRed.svg");
+    background-repeat: no-repeat;
+    width: calc(100%  - 15rem);
+    background-size: cover;
+    margin: auto;
+}
+.ricicloRed .innerContainer {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+.ricicloRed .text {
+    margin-top: 0;
+}
+.ricicloRed .image {
+    position: relative;
+    display: flex;
+}
+.ricicloRed .image img {
+    width: 100%;
+}
+.ricicloRed .brandon {
+    color: #FFFFFF;
+    text-align: left;
+}
+.ricicloRed .nunito {
+    color: #FFFFFF;
+    text-align: left;
+    line-height: 30px;
+}
+
+.containerRicicloGrey {
+    width: 100%;
+    max-width: 1504px;
+    margin: auto;
+    position: relative;
+    top: -20rem;
+    margin-bottom: -20rem;
+}
+.ricicloGrey {
+    background-image: url("/assets/svg/VectorRicicloGrey.svg");
+    background-repeat: no-repeat;
+    width: calc(100%  - 4rem);
+    background-size: cover;
+    margin: auto;
+    position: relative;
+}
+.ricicloGrey .innerContainer {
+    padding: 20rem 2rem 2rem 2rem ;
+    margin: auto;
+}
+.ricicloGrey .text {
+    margin-top: 0;
+}
+.ricicloGrey .image {
+    position: relative;
+    display: flex;
+}
+.ricicloGrey .image img {
+    width: 100%;
+}
+.ricicloGrey .brandon {
+    color: #FFFFFF;
+}
+.ricicloGrey .nunito {
+    color: #FFFFFF;
+    line-height: 30px;
+}
+.ricicloGrey .flexNumber {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    white-space: nowrap;
+    margin-top: 3rem;
+}
+.ricicloGrey .flexNumber .brandon {
+    font-size: 70px;
+    color: #E01F26;
+    text-align: left;
+    margin-top: 0;
+}
+.ricicloGrey .flexNumber .minus {
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+.ricicloGrey .flexNumber .number {
+    grid-area: 1 / 2 / span 1 / span 1;
+}
+.ricicloGrey .flexNumber .nunito {
+    margin-top: 0;
+    text-align: left;
+    grid-area: 2 / 2 / span 1 / span 1;
+}
+.ricicloGrey .flexNumber .text {
+  padding: 0;
+  display: grid;
+  column-gap: 0.5rem;
+  grid-template-columns: auto auto auto;
+}
+
 
 /* media queries */
+
+@media screen and (max-width: 1126px) {
+   .flexNumber .brandon {
+      font-size: 50px !important;
+   }
+}
+
 
 @media screen and (max-width: 368px) {
     .two {
        position: relative;
        top: 0.5rem;
    } 
-   .brandon {
+  #impegno .brandon {
        margin: 3rem auto 0.5rem auto !important ;
    }
 }
@@ -265,7 +379,7 @@ footer .innerContainer {
 
 
 @media screen and (max-width: 950px) {
-    .flex {
+    .flex, .flexNumber {
         flex-direction: column;
     }
     .column {
@@ -278,7 +392,25 @@ footer .innerContainer {
     .flex .column {
         width: 100% !important;
     }
+    .ricicloRed .innerContainer {
+      display: block;
+    }
+    .ricicloRed .text {
+        margin-bottom: 2.5rem;
+    }
+
 }
+
+@media screen and (max-width: 800px) {
+
+    .containerRicicloRed {
+        max-width: 1500px;
+    }
+    .ricicloRed {
+        width: calc(100%  - 8rem);
+    }
+}
+
 @media screen and (max-width: 600px) {
     .brandon {
         font-size: 30px !important;
@@ -287,6 +419,11 @@ footer .innerContainer {
         font-size: 30px !important;
         padding: 1rem 0.5rem 0.5rem !important;
     }
+}
+@media screen and (max-width: 400px) {
+    .flexNumber .brandon {
+        font-size: 40px !important;
+     }
 }
 
 
