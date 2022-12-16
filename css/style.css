@@ -549,13 +549,16 @@ section {
 
 .flexNumber .text .brandon span {
     margin: 0;
+    padding-top: 7px;
+    top: -5px;
+    position: relative;
 }
 .counter {
   position: relative;
   display: flex;
   overflow: hidden;
   align-items: center;
-  height: 3.125rem;
+  height: 4.130rem;
   font-size: 3.125rem;
   color: #333;
   margin: 0 1.25rem 0.625rem;
@@ -564,7 +567,7 @@ section {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  height: 105%;
+  height: 100%;
   transition: -webkit-transform 2s ease;
   transition: transform 2s ease;
   transition: transform 2s ease, -webkit-transform 2s ease;

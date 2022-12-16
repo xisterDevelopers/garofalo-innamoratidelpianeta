@@ -93,7 +93,7 @@ const ready = (selector, callback) => {
 
 ready('.counter', (stat) => {
 	// pattern used to seperate input number from html into an array of numbers and non numbers. EX $65.3M -> ["$65.3M", "$", "65", ".", "3", "M"]
-	const patt = /(\D+)?(\d+)(\D+)?(\d+)?(\D+)?/;
+	const patt = /(\D+)?(\d+)(\D+)?(\d+)?(\D+)?(\d+)?/;
 	const time = 200;
 	let result = [...patt.exec(stat.textContent)];
 	let fresh = true;
