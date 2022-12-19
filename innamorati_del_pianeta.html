@@ -53,22 +53,16 @@
             // I set the path to / so once they'd seen it once on the site they wouldn't
             // see it on other pages.
             document.cookie = "videoAutoPlay=true; path=/;";
-            link += "&amp;autoplay=1"; // append an autoplay tag to the video URL
-            console.log('ciao')
+            link += "&amp;autoplay=1"; 
           }
-          document.getElementById("videoframe").src =  link; // set the iframe src
+          document.getElementById("videoframe").src =  link;
           </script>
-
-        <!-- <video width="100%" height="100%" controls poster="assets/img/apple.jpeg">
-          <source src="movie.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video> -->
       </div> 
     </section>
 
-  <section style="opacity: 0;">
+  <section style="opacity: 0;" id="impegno">
       <div class="text">
-        <div class="brandon" id="impegno">
+        <div class="brandon">
           <span>L'amore è </span>
           <span class="redBrandon one">impegno</span>
         </div>
@@ -78,8 +72,8 @@
       </div> 
     </section>
 
-  <section style="opacity: 0;">
-      <div style="transform: scale(2) translate(13rem, 28rem);" class="infograficaPasta">
+  <section class="infograficaPasta">
+      <div style="opacity: 0; transform: scale(2.5) translate(-8rem, 0rem);">
        <img alt="infografica" src="assets/img/infograficaSostenibilitàDesktop.png"><img>
       </div>
     </section>
@@ -222,10 +216,10 @@
     </div>
     </section>
 
-    <section style="opacity: 0;">
+    <section style="opacity: 0;" id="fattoDiGesti">
       <div class="text">
         <div class="brandon">Innam<span class="bigB">ó</span>rati del pianeta</div>
-        <div class="brandon smallB" id="fattoDiGesti">
+        <div class="brandon smallB">
           <span>L'amore è </span>
           <span class="redBrandon four smallB">fatto di gesti</span>
         </div>
@@ -266,7 +260,6 @@
         <!-- 
            <video width="100%" height="100%" controls poster="assets/img/apple.jpeg">
           <source src="movie.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video> -->
       </div> 
     </section>

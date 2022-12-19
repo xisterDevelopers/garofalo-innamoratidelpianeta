@@ -1,59 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    var ypos = window.pageYOffset;
-    var height = window.innerHeight;
-    var calc = ypos + height;
-    var sectionArr = document.getElementsByTagName("section");
-    for(let x = 0; x < sectionArr.length; x++) {
-        if(calc > (sectionArr[x].offsetTop + 200 ) )
-        sectionArr[x].classList.add("visible");
-     }
-     var infografica = document.getElementsByClassName("infograficaPasta");
-     for(let x = 0; x < infografica.length; x++) {
-         if(calc > (infografica[x].offsetTop + 200 ) )
-         infografica[x].classList.add("zoomOut");
-      }
-
-function Scroll () {
-  var ypos = window.pageYOffset;
-  var height = window.innerHeight;
-  var calc = ypos + height;
-
-  var sectionArr = document.getElementsByTagName("section");
-    for(let x = 0; x < sectionArr.length; x++) {
-        if(calc > (sectionArr[x].offsetTop + 200 ) )
-        sectionArr[x].classList.add("visibleScroll");
-     }
-
-    var infografica = document.getElementsByClassName("infograficaPasta");
-     for(let x = 0; x < infografica.length; x++) {
-         if(calc > (infografica[x].offsetTop + 200 ) )
-         infografica[x].classList.add("zoomOut");
-      }
-  }
-  window.addEventListener("scroll", Scroll);
-
-
-  function handleClickOutside (event) {
-    var header = document.getElementById("header");
-   if(!header.contains(event.target)) {
-       collapse();
-   }
-  }
-  window.addEventListener("click", handleClickOutside, true);
-
-});
-
-
-function scrollAncora (id) {
-  collapse();
-  window.scroll({
-    top: document.getElementById(id)?.getBoundingClientRect().top + window.scrollY,
-    behavior: 'smooth'
-  });
-
-}
-
-
 
 function collapse () {
   var breakpointMobile = 768;
@@ -76,7 +20,13 @@ function collapse () {
 }
 
 
-
+function scrollAncora (id) {
+  collapse();
+  window.scroll({
+    top: document.getElementById(id)?.getBoundingClientRect().top + window.scrollY - 100,
+    behavior: 'smooth'
+  });
+}
 
 
 // ready check helper function (waits for the dom to load, then returns the indivudual elements one at a time - in case there are more than one of them on the page). I generally use this for all of my dom manipulating scripts so I dont have to type DOMContentLoaded and elems.forEach a hundred times
@@ -148,6 +98,57 @@ ready('.counter', (stat) => {
 	}
 	window.addEventListener('scroll', activate);
 	activate();
+
+
+  // ------------------ 
+
+  var ypos = window.pageYOffset;
+  var height = window.innerHeight;
+  var calc = ypos + height;
+  var sectionArr = document.getElementsByTagName("section");
+  for(let x = 0; x < sectionArr.length; x++) {
+      if(calc > (sectionArr[x].offsetTop + 200 ) )
+      sectionArr[x].classList.add("visible");
+   }
+   var infografica = document.getElementsByClassName("infograficaPasta");
+   for(let x = 0; x < infografica.length; x++) {
+       if(calc > (infografica[x].offsetTop + 200 ) ){
+        infografica[x].classList.remove("visible");
+        infografica[x].classList.add("zoomOut");
+       }
+    }
+
+function Scroll () {
+var ypos = window.pageYOffset;
+var height = window.innerHeight;
+var calc = ypos + height;
+
+var sectionArr = document.getElementsByTagName("section");
+  for(let x = 0; x < sectionArr.length; x++) {
+      if(calc > (sectionArr[x].offsetTop + 200 ) )
+      sectionArr[x].classList.add("visibleScroll");
+   }
+
+  var infografica = document.getElementsByClassName("infograficaPasta");
+   for(let x = 0; x < infografica.length; x++) {
+       if(calc > (infografica[x].offsetTop + 500 ) )
+       {
+        infografica[x].classList.remove("visibleScroll");
+        infografica[x].classList.add("zoomOutScroll");
+       }
+
+    }
+}
+window.addEventListener("scroll", Scroll);
+
+
+function handleClickOutside (event) {
+  var header = document.getElementById("header");
+ if(!header.contains(event.target)) {
+     collapse();
+ }
+}
+window.addEventListener("click", handleClickOutside, true);
 });
 
 const slider = document.querySelector(".horizontal-slider");
