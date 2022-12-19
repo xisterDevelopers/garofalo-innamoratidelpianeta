@@ -43,9 +43,22 @@
 
       <section style="opacity: 0;">
       <div class="fullVideo">
-        <iframe width="100%" height="100%"
-        src="https://www.youtube.com/embed/ECyvxaRINFE?autoplay=1&amp;mute=1" allow='autoplay; encrypted-media' allowfullscreen showinfo="0" frameborder="0" autohide="1">
+        <iframe width="100%" height="100%" id="videoframe"
+        src="" allow='autoplay; encrypted-media' allowfullscreen showinfo="0" frameborder="0" autohide="1">
         </iframe>
+
+        <script language="javascript">
+          var link = "https://www.youtube.com/embed/ECyvxaRINFE?mute=1&amp;rel=0";
+          if (document.cookie.length == 0 || document.cookie.indexOf("videoAutoPlay") == -1) {
+            // I set the path to / so once they'd seen it once on the site they wouldn't
+            // see it on other pages.
+            document.cookie = "videoAutoPlay=true; path=/;";
+            link += "&amp;autoplay=1"; // append an autoplay tag to the video URL
+            console.log('ciao')
+          }
+          document.getElementById("videoframe").src =  link; // set the iframe src
+          </script>
+
         <!-- <video width="100%" height="100%" controls poster="assets/img/apple.jpeg">
           <source src="movie.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -248,7 +261,7 @@
   <section style="opacity: 0;">
       <div class="fullVideo"> 
         <iframe width="100%" height="100%"
-        src="https://www.youtube.com/embed/ECyvxaRINFE">
+        src="https://www.youtube.com/embed/ECyvxaRINFE?autoplay=0&amp;mute=1&amp;rel=0" allow='autoplay; encrypted-media' allowfullscreen showinfo="0" frameborder="0" autohide="1">
         </iframe>
         <!-- 
            <video width="100%" height="100%" controls poster="assets/img/apple.jpeg">
