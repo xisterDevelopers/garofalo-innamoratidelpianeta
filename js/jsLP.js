@@ -1,4 +1,3 @@
-
 function collapse () {
   var breakpointMobile = 768;
   var header = document.getElementById("header");
@@ -118,6 +117,9 @@ ready('.counter', (stat) => {
        }
     }
 
+
+// -----------------
+
 function Scroll () {
 var ypos = window.pageYOffset;
 var height = window.innerHeight;
@@ -141,6 +143,28 @@ var sectionArr = document.getElementsByTagName("section");
 }
 window.addEventListener("scroll", Scroll);
 
+// -----------------
+
+
+// function mouseWheel (event) {
+// }
+// window.addEventListener('mousewheel', mouseWheel);
+
+function smooth(event) {
+  event.preventDefault();
+  smoothY += event.deltaY * -0.02;
+  // smoothY = Math.max(Math.min(6, smoothY), -6);
+  smoothY = Math.min(Math.max(smoothY, -26), 40 );
+  // Apply transform
+  for(let x = 0; x < elArr.length; x++) {
+    elArr[x].style.transform = `translateY(${smoothY}px)`;
+ }
+}
+let smoothY = 1;
+const elArr = document.getElementsByClassName('smooth');
+window.onwheel = smooth;
+
+// -----------------
 
 function handleClickOutside (event) {
   var header = document.getElementById("header");
@@ -150,6 +174,8 @@ function handleClickOutside (event) {
 }
 window.addEventListener("click", handleClickOutside, true);
 });
+
+// -----------------
 
 const slider = document.querySelector(".horizontal-slider");
 let isDown = false;

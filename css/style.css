@@ -266,6 +266,7 @@ footer .innerContainer {
     margin: auto;
     z-index: 1;
     position: relative;
+    scroll-behavior: smooth;
 }
 .ricicloRed {
     background-image: url("/assets/svg/VectorRicicloRed.svg");
@@ -307,6 +308,7 @@ footer .innerContainer {
     position: relative;
     top: -20rem;
     margin-bottom: -20rem;
+    scroll-behavior: smooth;
 }
 .ricicloGrey {
     background-image: url("/assets/svg/VectorRicicloGrey.svg");
@@ -722,3 +724,7 @@ section {
     z-index: 1;
   }
   
+
+  .smooth {
+    transition: transform 1s ease-out !important;
+  }
