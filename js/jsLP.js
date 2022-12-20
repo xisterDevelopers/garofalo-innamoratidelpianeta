@@ -152,7 +152,7 @@ window.addEventListener("scroll", Scroll);
 
 function smooth(event) {
   event.preventDefault();
-  smoothY += event.deltaY * -0.02;
+  smoothY += event.deltaY * -0.04;
   // smoothY = Math.max(Math.min(6, smoothY), -6);
   smoothY = Math.min(Math.max(smoothY, -26), 40 );
   // Apply transform
@@ -162,7 +162,7 @@ function smooth(event) {
 }
 let smoothY = 1;
 const elArr = document.getElementsByClassName('smooth');
-window.onwheel = smooth;
+//window.onwheel = smooth;
 
 // -----------------
 
