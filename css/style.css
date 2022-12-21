@@ -200,7 +200,7 @@ footer .innerContainer {
     position: relative;
     overflow: hidden;
 }
-.infograficaPasta::after {
+/* .infograficaPasta::after {
     content: '';
     width: 100%;
     height: 100%;
@@ -210,7 +210,7 @@ footer .innerContainer {
     transition: all 5s cubic-bezier(.19,1,.22,1);
     background: radial-gradient(#f2f2f200, #ffffff, #ffffff);
     opacity: 1;
-}
+} */
 .infograficaPasta img {
     position: relative;
     width: 100%;
@@ -795,4 +795,13 @@ section {
     opacity: 0 !important;
     -webkit-transition: all 1.5s cubic-bezier(.19,1,.22,1) !important;
     transform: translateY(-50%);
+  }
+
+  .visibleFirstDivAnimation {
+    opacity: 1 !important;
+    -webkit-transition: all 3s cubic-bezier(.19,1,.22,1) !important;
+  }
+  .hiddenFirstDivAnimation {
+    opacity: 0 !important;
+    -webkit-transition: all 1.5s cubic-bezier(.19,1,.22,1) !important;
   }

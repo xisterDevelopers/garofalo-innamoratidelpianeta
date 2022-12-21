@@ -203,29 +203,43 @@ function animation (e) {
 
   if((ypos - heroAnimation.offsetTop) >= 0)  {
      //si blocca lo scroll
-     console.log('BLOCCATO')
+     console.log('BLOCCATO');
   }
-
-
-  var ricicloRed = document.getElementById("ricicloRed");
-  
-  var x = heroAnimation.offsetHeight;   // il div è 250vh   
-  var z = x +  heroAnimation.offsetTop;
   if(calc >= z)  {
     console.log('SBLOCCATO')
     //si 'sblocca lo scroll
     }
 
+  var ricicloRed = document.getElementById("ricicloRed");
+  var firsText = document.getElementById('impegno');
+  
+  var x = heroAnimation.offsetHeight;   // il div è 250vh   
+  var z = x +  heroAnimation.offsetTop;
+
+
+  if(ypos > (heroAnimation.offsetTop + 200)) {
+     firsText.classList.add('hiddenFirstDivAnimation')
+     firsText.classList.remove('visibleFirstDivAnimation')
+    //si 'sblocca lo scroll
+    }
+    else {
+      firsText.classList.remove('hiddenFirstDivAnimation')
+      firsText.classList.add('visibleFirstDivAnimation')
+    }
+
+
+
     if(calc >= (z- (height * 38/100)) ) {
       ricicloRed.classList.remove('hiddenLastDivAnimation')
       ricicloRed.classList.add('visibleLastDivAnimation')
-      //si 'sblocca lo scroll
+      //si 'sblocca lo scroll  
       }
       else {
         ricicloRed.classList.remove('visibleLastDivAnimation')
         ricicloRed.classList.add('hiddenLastDivAnimation')
-        
       }
+
+
 
 }
 //------------------
