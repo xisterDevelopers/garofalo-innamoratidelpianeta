@@ -255,7 +255,7 @@ footer .innerContainer {
     width: fit-content;
 }
 .ricicloRed {
-    background-image: url("/assets/svg/VectorRicicloRed.svg");
+    background-image: url("../assets/svg/VectorRicicloRed.svg");
     background-repeat: no-repeat;
     width: calc(100%  - 5rem);
     max-width: 1500px;
@@ -290,7 +290,7 @@ footer .innerContainer {
 }
 
 .ricicloGrey {
-    background-image: url("/assets/svg/VectorRicicloGrey.svg");
+    background-image: url("../assets/svg/VectorRicicloGrey.svg");
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
@@ -696,7 +696,7 @@ section {
   .card .red {
     padding: 2rem 3rem 4rem;
     left: 70px;
-    background: url('/assets/svg/bgTextSlide.svg');
+    background: url('../assets/svg/bgTextSlide.svg');
     background-size: cover;
     background-repeat: no-repeat;
     max-width: 503px;
