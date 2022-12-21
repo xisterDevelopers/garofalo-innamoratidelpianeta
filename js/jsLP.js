@@ -110,13 +110,12 @@ ready('.counter', (stat) => {
       sectionArr[x].classList.add("visible");
    }
    var infografica = document.getElementsByClassName("infograficaPasta");
-   for(let x = 0; x < infografica.length; x++) {
-       if(calc > (infografica[x].offsetTop + 200 ) ){
-        infografica[x].classList.remove("visible");
-        infografica[x].classList.add("zoomOut");
-       }
-    }
-
+  //  for(let x = 0; x < infografica.length; x++) {
+  //      if(calc > (infografica[x].offsetTop + 200 ) ){
+  //       infografica[x].classList.remove("visible");
+  //       infografica[x].classList.add("zoomOut");
+  //      }
+  //   }
 
 // -----------------
 
@@ -132,23 +131,24 @@ var sectionArr = document.getElementsByTagName("section");
    }
 
   var infografica = document.getElementsByClassName("infograficaPasta");
-   for(let x = 0; x < infografica.length; x++) {
-       if(calc > (infografica[x].offsetTop + 500 ) )
-       {
-        infografica[x].classList.remove("visibleScroll");
-        infografica[x].classList.add("zoomOutScroll");
-       }
+  //  for(let x = 0; x < infografica.length; x++) {
+  //      if(calc > (infografica[x].offsetTop + 500 ) )
+  //      {
+  //       infografica[x].classList.remove("visibleScroll");
+  //       infografica[x].classList.add("zoomOutScroll");
+  //      }
 
-    }
+  //   }
 }
 window.addEventListener("scroll", Scroll);
 
 // -----------------
+   //WHEEL
+const elArr = document.getElementsByClassName('smooth');
+//window.onwheel = smooth;
 
-
-// function mouseWheel (event) {
-// }
-// window.addEventListener('mousewheel', mouseWheel);
+const slider = document.getElementById('slider');
+slider.onwheel = scrollXY;
 
 function smooth(event) {
   event.preventDefault();
@@ -161,10 +161,74 @@ function smooth(event) {
  }
 }
 let smoothY = 1;
-const elArr = document.getElementsByClassName('smooth');
-//window.onwheel = smooth;
 
-// -----------------
+
+function scrollXY(e) {
+  console.log(e);
+  // const slider = document.getElementById('slider');
+  // const card = document.getElementsByClassName('card');
+  //  for(var x = 0; x < card.length; x++) {
+  //   console.log(card[x].getBoundingClientRect().left)
+  //   if(card[x].getBoundingClientRect().left == 0) {
+  //     card[x].classList.add('active');
+  //   }
+  //  }
+  // if(e.deltaY > 0) {
+  // }
+}
+const infograficaId = document.getElementById('infografica');
+infograficaId.addEventListener("wheel", scale);
+
+function scale(event) {
+  // const body = document.querySelector("body");
+  // if((infograficaId.firstElementChild.style.transform != `scale(1)`) && (infograficaId.firstElementChild.style.transform != `scale(2.5)`)) {
+  //   event.preventDefault();
+  //   body.style.overflow = `hidden`;
+  // }
+  // body.style.overflow = `scroll`;
+  // smoothScaleY += event.deltaY * -0.01;
+  // smoothScaleY = Math.max(Math.min(2.5, smoothScaleY), 1);
+  // infograficaId.firstElementChild.style.transform = `scale(${smoothScaleY})`;
+}
+let smoothScaleY=1;
+
+// ----------------
+var heroAnimation = document.getElementById("heroAnimation");
+heroAnimation.onwheel = animation;
+
+function animation (e) {
+  var ypos = window.pageYOffset;
+  var height = window.innerHeight;
+  var calc = ypos + height;
+
+  if((ypos - heroAnimation.offsetTop) >= 0)  {
+     //si blocca lo scroll
+     console.log('BLOCCATO')
+  }
+
+
+  var ricicloRed = document.getElementById("ricicloRed");
+  
+  var x = heroAnimation.offsetHeight;   // il div è 250vh   
+  var z = x +  heroAnimation.offsetTop;
+  if(calc >= z)  {
+    console.log('SBLOCCATO')
+    //si 'sblocca lo scroll
+    }
+
+    if(calc >= (z- (height * 38/100)) ) {
+      ricicloRed.classList.remove('hiddenLastDivAnimation')
+      ricicloRed.classList.add('visibleLastDivAnimation')
+      //si 'sblocca lo scroll
+      }
+      else {
+        ricicloRed.classList.remove('visibleLastDivAnimation')
+        ricicloRed.classList.add('hiddenLastDivAnimation')
+        
+      }
+
+}
+//------------------
 
 function handleClickOutside (event) {
   var header = document.getElementById("header");

@@ -198,7 +198,7 @@ footer .innerContainer {
    }
 .infograficaPasta {
     position: relative;
-    transform: translate(0);
+    overflow: hidden;
 }
 .infograficaPasta::after {
     content: '';
@@ -242,7 +242,7 @@ footer .innerContainer {
    gap: 1.3rem;
    margin: auto;
    align-items: center;
-   padding-left: 0.5rem;
+   padding-left: 0.5em;
 }
 .titleImg .brandon {
     margin: auto 0;
@@ -555,7 +555,7 @@ section {
 } 
 .zoomOutScroll > div {
     opacity: 1 !important;
-    transform: scale(1) translate(0) !important;
+    /* transform: scale(1) translate(0) !important; */
     transition-delay: 4s;
     -webkit-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 3.5s cubic-bezier(.19,1,.22,1) ;
     -moz-transition: opacity 5s cubic-bezier(.19,1,.22,1), transform 3.5s cubic-bezier(.19,1,.22,1);
@@ -566,7 +566,7 @@ section {
 }
 .zoomOut > div {
     opacity: 1 !important;
-    transform: scale(1) translate(0) !important;
+    /* transform: scale(1) translate(0) !important; */
     transition-delay: 2s;
     -webkit-transition: all 0s cubic-bezier(.19,1,.22,1);
     -moz-transition: all 0s cubic-bezier(.19,1,.22,1);
@@ -754,4 +754,45 @@ section {
 
   .smooth {
     transition: transform 0.4s ease-out !important;
+  }
+
+
+
+  /* hero animation */
+
+  .heroAnimation {
+    position: relative;
+    height: 250vh;
+  }
+
+  .sticky {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: sticky;
+    overflow: hidden;
+  }
+
+  #ricicloRed {
+    position: absolute;
+    width: 100%;
+    top: calc(50% + 52px/2);
+    left: 0;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .afterHeroAnimation {
+     margin-top: -34vh; 
+  }
+
+  .visibleLastDivAnimation {
+    opacity: 1 !important;
+    -webkit-transition: all 3s cubic-bezier(.19,1,.22,1) !important;
+    transform: translateY(-50%);
+  }
+  .hiddenLastDivAnimation {
+    opacity: 0 !important;
+    -webkit-transition: all 1.5s cubic-bezier(.19,1,.22,1) !important;
+    transform: translateY(-50%);
   }
