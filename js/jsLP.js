@@ -196,6 +196,10 @@ let smoothScaleY=1;
 var heroAnimation = document.getElementById("heroAnimation");
 heroAnimation.onwheel = animation;
 
+
+let smoothInfografica=1;
+let smoothFirstTextY=1;
+let smoothLastTextY=1;
 function animation (e) {
   var ypos = window.pageYOffset;
   var height = window.innerHeight;
@@ -212,37 +216,48 @@ function animation (e) {
 
   var ricicloRed = document.getElementById("ricicloRed");
   var firsText = document.getElementById('impegno');
+  var infografica = document.getElementById('infografica');
   
   var x = heroAnimation.offsetHeight;   // il div è 250vh   
   var z = x +  heroAnimation.offsetTop;
 
 
-  if(ypos > (heroAnimation.offsetTop + 200)) {
-     firsText.classList.add('hiddenFirstDivAnimation')
-     firsText.classList.remove('visibleFirstDivAnimation')
-    //si 'sblocca lo scroll
-    }
-    else {
-      firsText.classList.remove('hiddenFirstDivAnimation')
-      firsText.classList.add('visibleFirstDivAnimation')
-    }
+  if((ypos > (heroAnimation.offsetTop + 200)) && (ypos < (heroAnimation.offsetTop + 500))) {
 
-
+    smoothFirstTextY += e.deltaY * -0.002;
+    smoothFirstTextY = Math.min(Math.max(smoothFirstTextY, 0), 1 );
+    firsText.style.opacity = `${smoothFirstTextY}`;
+    }
 
     if(calc >= (z- (height * 38/100)) ) {
-      ricicloRed.classList.remove('hiddenLastDivAnimation')
-      ricicloRed.classList.add('visibleLastDivAnimation')
-      //si 'sblocca lo scroll  
-      }
-      else {
-        ricicloRed.classList.remove('visibleLastDivAnimation')
-        ricicloRed.classList.add('hiddenLastDivAnimation')
-      }
+      // //si 'sblocca lo scroll  
 
-
+      smoothLastTextY += e.deltaY * 0.002;
+      smoothLastTextY = Math.min(Math.max(smoothLastTextY, 0), 1 );
+      ricicloRed.style.opacity = `${smoothLastTextY}`;
+      }
 
 }
 //------------------
+
+
+// let supportOffset = window.pageYOffset !== undefined,
+//   lastKnownPos = 0,
+//   scrollDir,
+//   scrollAmount,
+//   scrollTotalAmount = 0,
+//   currYPos;
+// window.addEventListener('wheel', (e) => {
+
+//   currYPos = supportOffset ? window.pageYOffset : document.body.scrollTop;
+//   scrollDir = lastKnownPos > currYPos ? 'up' : 'down';
+//   scrollAmount = Math.abs(lastKnownPos - currYPos);
+//   scrollTotalAmount += scrollAmount;
+
+//   lastKnownPos = currYPos;
+//   console.log(lastKnownPos, currYPos, scrollDir, scrollAmount, scrollTotalAmount)
+// });
+
 
 function handleClickOutside (event) {
   var header = document.getElementById("header");

@@ -197,8 +197,15 @@ footer .innerContainer {
     background-image: url("../assets/svg/Vector\ 4.svg") ;
    }
 .infograficaPasta {
-    position: relative;
-    overflow: hidden;
+    /* position: relative;
+    overflow: hidden; */
+    position: absolute;
+    overflow: initial;
+    /* top: 0; */
+    margin-top: 0;
+    z-index: 3;
+    transform-origin: top center;
+    width: 100%;
 }
 /* .infograficaPasta::after {
     content: '';
@@ -795,13 +802,4 @@ section {
     opacity: 0 !important;
     -webkit-transition: all 1.5s cubic-bezier(.19,1,.22,1) !important;
     transform: translateY(-50%);
-  }
-
-  .visibleFirstDivAnimation {
-    opacity: 1 !important;
-    -webkit-transition: all 3s cubic-bezier(.19,1,.22,1) !important;
-  }
-  .hiddenFirstDivAnimation {
-    opacity: 0 !important;
-    -webkit-transition: all 1.5s cubic-bezier(.19,1,.22,1) !important;
   }
