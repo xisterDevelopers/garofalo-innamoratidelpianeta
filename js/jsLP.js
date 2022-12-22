@@ -1,3 +1,20 @@
+
+
+// -------------------------------------------------------------------- FUNCTION READY --------------------------------------------------------------------------------------
+
+const ready = (selector, callback) => {
+  window.addEventListener('DOMContentLoaded', function () {
+    const elems = [...document.querySelectorAll(selector)];
+    if (elems.length) {
+      for (let elem of elems) {
+        callback(elem);
+      }
+    }
+  });
+};
+
+
+// ------------------------------------------------------------------- BURGER MENU DROP DOWN --------------------------------------------------------------------------------------
 function collapse () {
   var breakpointMobile = 768;
   var header = document.getElementById("header");
@@ -18,7 +35,7 @@ function collapse () {
   }
 }
 
-
+// ------------------------------------------------------------------- SCROLL ANCORE MENU' --------------------------------------------------------------------------------------
 function scrollAncora (id) {
   collapse();
   window.scroll({
@@ -28,78 +45,82 @@ function scrollAncora (id) {
 }
 
 
-// ready check helper function (waits for the dom to load, then returns the indivudual elements one at a time - in case there are more than one of them on the page). I generally use this for all of my dom manipulating scripts so I dont have to type DOMContentLoaded and elems.forEach a hundred times
-const ready = (selector, callback) => {
-	window.addEventListener('DOMContentLoaded', function () {
-		const elems = [...document.querySelectorAll(selector)];
-		if (elems.length) {
-			for (let elem of elems) {
-				callback(elem);
-			}
-		}
-	});
-};
+// -------------------------------------------------------------------- READY --------------------------------------------------------------------------------------
 
 ready('.counter', (stat) => {
-	// pattern used to seperate input number from html into an array of numbers and non numbers. EX $65.3M -> ["$65.3M", "$", "65", ".", "3", "M"]
-	const patt = /(\D+)?(\d+)(\D+)?(\d+)?(\D+)?(\d+)?/;
-	const time = 200;
-	let result = [...patt.exec(stat.textContent)];
-	let fresh = true;
-	let ticks;
-	
-	// Remove first full match from result array (we dont need the full match, just the individual match groups).
-	result.shift();
-	// Remove undefined values from result array where they didnt have a match in one of the optional regex groups
-	result = result.filter(res => res != null);
 
-	while (stat.firstChild) {
-		stat.removeChild(stat.firstChild);
-	}
-
-	for (let res of result) {
-		if (isNaN(res)) {
-			stat.insertAdjacentHTML('beforeend', `<span>${res}</span>`);
-		}
-		else {
-			for (let i = 0; i < res.length; i++) {
-				stat.insertAdjacentHTML('beforeend',
-					`<span data-value="${res[i]}">
-						<span>&ndash;</span>
-						${Array(parseInt(res[i]) + 1).join(0).split(0).map((x, j) => `
-							<span>${j}</span>
-						`).join('')}
-					</span>`
-				);
-			}
-		}
-	}
-
-	ticks = [...stat.querySelectorAll('span[data-value]')];
-
-	let activate = () => {
-		let top = stat.getBoundingClientRect().top;
-		let offset = (window.innerHeight * 3 / 4);
-
-		setTimeout(() => {
-			fresh = false;
-		}, time);
-
-		if (top < offset) {
-			setTimeout(() => {
-				for (let tick of ticks) {
-					let dist = parseInt(tick.getAttribute('data-value')) + 1;
-					tick.style.transform = `translateY(-${(dist) * 100}%)`
-				}
-			}, fresh ? time : 0);
-			window.removeEventListener('scroll', activate);
-		}
-	}
-	window.addEventListener('scroll', activate);
-	activate();
+  // -------------------------------------------------------------------- ANIMAZIONE NUMERI --------------------------------------------------------------------------------------
 
 
-  // ------------------ 
+  // pattern used to seperate input number from html into an array of numbers and non numbers. EX $65.3M -> ["$65.3M", "$", "65", ".", "3", "M"]
+  const patt = /(\D+)?(\d+)(\D+)?(\d+)?(\D+)?(\d+)?/;
+  const time = 200;
+  let result = [...patt.exec(stat.textContent)];
+  let fresh = true;
+  let ticks;
+  
+  // Remove first full match from result array (we dont need the full match, just the individual match groups).
+  result.shift();
+  // Remove undefined values from result array where they didnt have a match in one of the optional regex groups
+  result = result.filter(res => res != null);
+
+  while (stat.firstChild) {
+    stat.removeChild(stat.firstChild);
+  }
+
+  for (let res of result) {
+    if (isNaN(res)) {
+      stat.insertAdjacentHTML('beforeend', `<span>${res}</span>`);
+    }
+    else {
+      for (let i = 0; i < res.length; i++) {
+        stat.insertAdjacentHTML('beforeend',
+          `<span data-value="${res[i]}">
+            <span>&ndash;</span>
+            ${Array(parseInt(res[i]) + 1).join(0).split(0).map((x, j) => `
+              <span>${j}</span>
+            `).join('')}
+          </span>`
+        );
+      }
+    }
+  }
+
+  ticks = [...stat.querySelectorAll('span[data-value]')];
+
+  let activate = () => {
+    let top = stat.getBoundingClientRect().top;
+    let offset = (window.innerHeight * 3 / 4);
+
+    setTimeout(() => {
+      fresh = false;
+    }, time);
+
+    if (top < offset) {
+      setTimeout(() => {
+        for (let tick of ticks) {
+          let dist = parseInt(tick.getAttribute('data-value')) + 1;
+          tick.style.transform = `translateY(-${(dist) * 100}%)`
+        }
+      }, fresh ? time : 0);
+      window.removeEventListener('scroll', activate);
+    }
+  }
+  window.addEventListener('scroll', activate);
+  activate();
+
+
+  // -------------------------------------------------------------------- CLICK FUORI DROP DOWN  --------------------------------------------------------------------------------------
+
+    function handleClickOutside (event) {
+      var header = document.getElementById("header");
+    if(!header.contains(event.target)) {
+        collapse();
+    }
+    }
+    window.addEventListener("click", handleClickOutside, true);
+
+// -------------------------------------------------------------------- SCROLL ANIMAZIONE SECTION  --------------------------------------------------------------------------------------
 
   var ypos = window.pageYOffset;
   var height = window.innerHeight;
@@ -109,46 +130,25 @@ ready('.counter', (stat) => {
       if(calc > (sectionArr[x].offsetTop + 200 ) )
       sectionArr[x].classList.add("visible");
    }
-   var infografica = document.getElementsByClassName("infograficaPasta");
-  //  for(let x = 0; x < infografica.length; x++) {
-  //      if(calc > (infografica[x].offsetTop + 200 ) ){
-  //       infografica[x].classList.remove("visible");
-  //       infografica[x].classList.add("zoomOut");
-  //      }
-  //   }
 
-// -----------------
+      function Scroll () {
+      var ypos = window.pageYOffset;
+      var height = window.innerHeight;
+      var calc = ypos + height;
 
-function Scroll () {
-var ypos = window.pageYOffset;
-var height = window.innerHeight;
-var calc = ypos + height;
+      var sectionArr = document.getElementsByTagName("section");
+        for(let x = 0; x < sectionArr.length; x++) {
+            if(calc > (sectionArr[x].offsetTop + 200 ) )
+            sectionArr[x].classList.add("visibleScroll");
+        }
+      }
+      window.addEventListener("scroll", Scroll);
 
-var sectionArr = document.getElementsByTagName("section");
-  for(let x = 0; x < sectionArr.length; x++) {
-      if(calc > (sectionArr[x].offsetTop + 200 ) )
-      sectionArr[x].classList.add("visibleScroll");
-   }
 
-  var infografica = document.getElementsByClassName("infograficaPasta");
-  //  for(let x = 0; x < infografica.length; x++) {
-  //      if(calc > (infografica[x].offsetTop + 500 ) )
-  //      {
-  //       infografica[x].classList.remove("visibleScroll");
-  //       infografica[x].classList.add("zoomOutScroll");
-  //      }
+// -------------------------------------------------------------------- SCROLL ANIMAZIONE PARALLASSE  --------------------------------------------------------------------------------------
 
-  //   }
-}
-window.addEventListener("scroll", Scroll);
-
-// -----------------
-   //WHEEL
 const elArr = document.getElementsByClassName('smooth');
 //window.onwheel = smooth;
-
-const slider = document.getElementById('slider');
-slider.onwheel = scrollXY;
 
 function smooth(event) {
   event.preventDefault();
@@ -163,41 +163,14 @@ function smooth(event) {
 let smoothY = 1;
 
 
-function scrollXY(e) {
-  console.log(e);
-  // const slider = document.getElementById('slider');
-  // const card = document.getElementsByClassName('card');
-  //  for(var x = 0; x < card.length; x++) {
-  //   console.log(card[x].getBoundingClientRect().left)
-  //   if(card[x].getBoundingClientRect().left == 0) {
-  //     card[x].classList.add('active');
-  //   }
-  //  }
-  // if(e.deltaY > 0) {
-  // }
-}
-const infograficaId = document.getElementById('infografica');
-infograficaId.addEventListener("wheel", scale);
+// -------------------------------------------------------------------- SCROLL ANIMAZIONE HERO + INFOGRAFICA  --------------------------------------------------------------------------------------
 
-function scale(event) {
-  // const body = document.querySelector("body");
-  // if((infograficaId.firstElementChild.style.transform != `scale(1)`) && (infograficaId.firstElementChild.style.transform != `scale(2.5)`)) {
-  //   event.preventDefault();
-  //   body.style.overflow = `hidden`;
-  // }
-  // body.style.overflow = `scroll`;
-  // smoothScaleY += event.deltaY * -0.01;
-  // smoothScaleY = Math.max(Math.min(2.5, smoothScaleY), 1);
-  // infograficaId.firstElementChild.style.transform = `scale(${smoothScaleY})`;
-}
-let smoothScaleY=1;
-
-// ----------------
 var heroAnimation = document.getElementById("heroAnimation");
-heroAnimation.onwheel = animation;
+window.onwheel = animation;
 
 
-let smoothInfografica=1;
+let smoothInfograficaY=1;
+let smoothInfograficaScale=1;
 let smoothFirstTextY=1;
 let smoothLastTextY=1;
 function animation (e) {
@@ -222,20 +195,40 @@ function animation (e) {
   var z = x +  heroAnimation.offsetTop;
 
 
-  if((ypos > (heroAnimation.offsetTop + 200)) && (ypos < (heroAnimation.offsetTop + 500))) {
-
+  if((ypos > (heroAnimation.offsetTop + 200))) {
     smoothFirstTextY += e.deltaY * -0.002;
     smoothFirstTextY = Math.min(Math.max(smoothFirstTextY, 0), 1 );
     firsText.style.opacity = `${smoothFirstTextY}`;
-    }
+     
+     smoothInfograficaY += e.deltaY * -0.04;
+     smoothInfograficaY = Math.min(Math.max(smoothInfograficaY, -100), 0 );
 
-    if(calc >= (z- (height * 38/100)) ) {
-      // //si 'sblocca lo scroll  
+     smoothInfograficaScale += e.deltaY * -0.001;
+     smoothInfograficaScale = Math.max(Math.min(2.5, smoothInfograficaScale), 1);
 
-      smoothLastTextY += e.deltaY * 0.002;
-      smoothLastTextY = Math.min(Math.max(smoothLastTextY, 0), 1 );
-      ricicloRed.style.opacity = `${smoothLastTextY}`;
-      }
+
+     if(firsText.style.opacity == 0)
+     infografica.style.transform = `translateY(0vh) scale(${smoothInfograficaScale})`;
+      
+    //  if(infografica.style.transform == `translateY(0vh) scale(1)`){
+    //      infografica.style.transform = `scale(1) translateY(${smoothInfograficaY}%)`;
+    //     } 
+     }
+
+  //    if(infografica.style.transform == `translateY(-100vh) scale(1)`){
+  //     ricicloRed.classList.remove('hiddenLastDivAnimation')
+  //     ricicloRed.classList.add('visibleLastDivAnimation')
+  //  } 
+
+      if(calc >= (z- (height / 45*16))) {
+        ricicloRed.classList.remove('hiddenLastDivAnimation')
+        ricicloRed.classList.add('visibleLastDivAnimation')
+        //si 'sblocca lo scroll  
+        }
+        else {
+          ricicloRed.classList.remove('visibleLastDivAnimation')
+          ricicloRed.classList.add('hiddenLastDivAnimation')
+        }
 
 }
 //------------------
@@ -259,16 +252,10 @@ function animation (e) {
 // });
 
 
-function handleClickOutside (event) {
-  var header = document.getElementById("header");
- if(!header.contains(event.target)) {
-     collapse();
- }
-}
-window.addEventListener("click", handleClickOutside, true);
+// -------------------------------------------------------------------- FINE READY  --------------------------------------------------------------------------------------
 });
 
-// -----------------
+// -------------------------------------------------------------------- SLIDER --------------------------------------------------------------------------------------
 
 const slider = document.querySelector(".horizontal-slider");
 let isDown = false;
