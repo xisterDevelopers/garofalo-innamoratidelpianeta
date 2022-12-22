@@ -218,7 +218,6 @@ let  lastKnownPos = 0,
 
       //  ----------------------------------- infografica -------------------------
 
-        //  if(firsText.style.opacity ==`0.3`)  {
           if(
             (ypos > (heroAnimation.offsetTop + (firsText.offsetHeight)))
             ) {
@@ -239,12 +238,6 @@ let  lastKnownPos = 0,
         }
 
       //  ----------------------------------- riciclo red -------------------------
-        //   if(infografica.style.transform == `translateY(-100%) scale(1)` && scrollDir == 'down') 
-        //    {
-        //      smoothLastTextY += e.deltaY * 0.002;
-        //      smoothLastTextY = Math.min(Math.max(smoothLastTextY, 0), 1 );
-        //      ricicloRed.style.opacity = `${smoothLastTextY}`;
-        //  }
 
          if(infografica.style.transform == `translateY(-100%) scale(1)` && scrollDir == 'down') 
          {
@@ -259,12 +252,12 @@ let  lastKnownPos = 0,
 
     //-------------------------------
   
-        if((ypos - heroAnimation.offsetTop) >= 0)  {
-          //si blocca lo scroll
-       }
-       if(calc >= z)  {
-         //si 'sblocca lo scroll
-         }
+      //   if((ypos - heroAnimation.offsetTop) >= 0)  {
+      //     //si blocca lo scroll
+      //  }
+      //  if(calc >= z)  {
+      //    //si 'sblocca lo scroll
+      //    }
 
          
   });
