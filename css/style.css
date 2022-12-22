@@ -221,11 +221,11 @@ footer .innerContainer {
 .infograficaPasta img {
     position: relative;
     width: 100%;
-    max-width: 1440px;
 }
 .infograficaPasta {
     padding: 1rem 5rem;
     text-align: center;
+    width: calc(100% - 10rem);
 }
 
 .bigB {
@@ -747,6 +747,11 @@ section {
     top: 0;
     position: sticky;
     overflow: hidden;
+  }
+
+  #infografica {
+    transform-origin: top center;
+    -webkit-transition: all 1s cubic-bezier(.19,1,.22,1) !important;
   }
 
   #firstText {

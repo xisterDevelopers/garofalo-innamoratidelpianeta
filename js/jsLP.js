@@ -187,6 +187,9 @@ let  lastKnownPos = 0,
   scrollAmount,
   scrollTotalAmount = 0,
   currYPos;
+
+
+  let stopBool = false;
   window.addEventListener('wheel', (e) => {
 
   let ypos = window.pageYOffset,
@@ -199,71 +202,69 @@ let  lastKnownPos = 0,
   scrollTotalAmount += scrollAmount;
 
   lastKnownPos = currYPos;
-  console.log(lastKnownPos, currYPos, scrollDir, scrollAmount, scrollTotalAmount)
+  //console.log(lastKnownPos, currYPos, scrollDir, scrollAmount, scrollTotalAmount)
 
-  console.log('ypos')
-  console.log(ypos)
-  console.log('top')
-  console.log(afterHero.offsetTop)
-
-
-  //  ----------------------------------- 1 -------------------------
-
+  //  ----------------------------------- first text -------------------------
        if(
        ((ypos > (heroAnimation.offsetTop + (firsText.offsetHeight / 2)) && scrollDir == 'down'))  ||
         ((ypos < (heroAnimation.offsetTop + (firsText.offsetHeight))) && scrollDir== 'up')
        ) {
+       
         smoothFirstTextY += e.deltaY * -0.002;
         smoothFirstTextY = Math.min(Math.max(smoothFirstTextY, 0), 1 );
         firsText.style.opacity = `${smoothFirstTextY}`;
          
-        //  smoothInfograficaY += e.deltaY * -0.04;
-        //  smoothInfograficaY = Math.min(Math.max(smoothInfograficaY, -100), 0 );
-    
-        //  smoothInfograficaScale += e.deltaY * -0.001;
-        //  smoothInfograficaScale = Math.max(Math.min(2.5, smoothInfograficaScale), 1);
-    
-    
-        //  if(firsText.style.opacity == 0)
-        //  infografica.style.transform = `translateY(0vh) scale(${smoothInfograficaScale})`;
          }
-  
-    //  ----------------------------------- 2 -------------------------
-    // if(calc >= (z- (height / 30*16))) {
-      if(
-       ((ypos > (afterHero.offsetTop - height) && scrollDir == 'down')) ||
 
-       ((ypos < (afterHero.offsetTop + (firsText.offsetHeight + (42*16)))) && scrollDir== 'up')
-      ) {
-          smoothLastTextY += e.deltaY * 0.002;
-          smoothLastTextY = Math.min(Math.max(smoothLastTextY, 0), 1 );
-          ricicloRed.style.opacity = `${smoothLastTextY}`;
+      //  ----------------------------------- infografica -------------------------
+
+        //  if(firsText.style.opacity ==`0.3`)  {
+          if(
+            (ypos > (heroAnimation.offsetTop + (firsText.offsetHeight)))
+            ) {
+
+             smoothInfograficaScale += e.deltaY * -0.001;
+
+          stopBool= false;
+         if(((smoothInfograficaScale * 2.5) >= 1) && ((smoothInfograficaScale * 2.5) <= 2.5)) {
+               infografica.style.transform = `scale(${smoothInfograficaScale * 2.5})`;
+               stopBool= true;
+             }
   
-        //   ricicloRed.classList.remove('hiddenLastDivAnimation')
-        //   ricicloRed.classList.add('visibleLastDivAnimation')
-        //   //si 'sblocca lo scroll  
-           }
-        //   else {
-        //     ricicloRed.classList.remove('visibleLastDivAnimation')
-        //     ricicloRed.classList.add('hiddenLastDivAnimation')
-        //   }
-  
+         if(smoothInfograficaScale < 2.5 && !stopBool)  {
+          smoothInfograficaY += e.deltaY * -0.04;
+          smoothInfograficaY = Math.min(Math.max(smoothInfograficaY, -100), 0 );
+          infografica.style.transform = `translateY(${smoothInfograficaY}%) scale(1)`;
+         }
+        }
+
+      //  ----------------------------------- riciclo red -------------------------
+        //   if(infografica.style.transform == `translateY(-100%) scale(1)` && scrollDir == 'down') 
+        //    {
+        //      smoothLastTextY += e.deltaY * 0.002;
+        //      smoothLastTextY = Math.min(Math.max(smoothLastTextY, 0), 1 );
+        //      ricicloRed.style.opacity = `${smoothLastTextY}`;
+        //  }
+
+         if(infografica.style.transform == `translateY(-100%) scale(1)` && scrollDir == 'down') 
+         {
+          ricicloRed.classList.remove('hiddenLastDivAnimation');
+           ricicloRed.classList.add('visibleLastDivAnimation');
+          }
+          else       
+             {
+            ricicloRed.classList.remove('visibleLastDivAnimation');
+             ricicloRed.classList.add('hiddenLastDivAnimation');
+            }
+
+    //-------------------------------
   
         if((ypos - heroAnimation.offsetTop) >= 0)  {
           //si blocca lo scroll
-         // console.log('BLOCCATO');
-  
-        //  console.log('---------------------------');
-  
-          // console.log(ypos);
-          // console.log(heroAnimation.offsetTop);
-          // console.log(heroAnimation.offsetTop + (firsText.offsetHeight))
        }
        if(calc >= z)  {
-         console.log('SBLOCCATO')
          //si 'sblocca lo scroll
          }
-  
 
          
   });
