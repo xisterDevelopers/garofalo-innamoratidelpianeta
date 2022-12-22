@@ -166,90 +166,107 @@ let smoothY = 1;
 // -------------------------------------------------------------------- SCROLL ANIMAZIONE HERO + INFOGRAFICA  --------------------------------------------------------------------------------------
 
 var heroAnimation = document.getElementById("heroAnimation");
-window.onwheel = animation;
 
 
-let smoothInfograficaY=1;
-let smoothInfograficaScale=1;
-let smoothFirstTextY=1;
-let smoothLastTextY=1;
-function animation (e) {
-  var ypos = window.pageYOffset;
-  var height = window.innerHeight;
-  var calc = ypos + height;
+let smoothInfograficaY=1,
+    smoothInfograficaScale=1,
+    smoothFirstTextY=1,
+    smoothLastTextY=1;
 
-  if((ypos - heroAnimation.offsetTop) >= 0)  {
-     //si blocca lo scroll
-     console.log('BLOCCATO');
-  }
-  if(calc >= z)  {
-    console.log('SBLOCCATO')
-    //si 'sblocca lo scroll
-    }
+    var ricicloRed = document.getElementById("ricicloRed");
+    var firsText = document.getElementById('impegno');
+    var infografica = document.getElementById('infografica');
+    var afterHero = document.getElementById('afterHeroAnimation');
+    
+    var x = heroAnimation.offsetHeight;   // il div è 250vh   
+    var z = x +  heroAnimation.offsetTop;
 
-  var ricicloRed = document.getElementById("ricicloRed");
-  var firsText = document.getElementById('impegno');
-  var infografica = document.getElementById('infografica');
+//let ypos = window.pageYOffset !== undefined,
+let  lastKnownPos = 0,
+  scrollDir,
+  scrollAmount,
+  scrollTotalAmount = 0,
+  currYPos;
+  window.addEventListener('wheel', (e) => {
+
+  let ypos = window.pageYOffset,
+  height = window.innerHeight,
+  calc = ypos + height;
+
+  currYPos = ypos ? window.pageYOffset : document.body.scrollTop;
+  scrollDir = lastKnownPos > currYPos ? 'up' : lastKnownPos < currYPos ? 'down' : 'stop';
+  scrollAmount = Math.abs(lastKnownPos - currYPos);
+  scrollTotalAmount += scrollAmount;
+
+  lastKnownPos = currYPos;
+  console.log(lastKnownPos, currYPos, scrollDir, scrollAmount, scrollTotalAmount)
+
+  console.log('ypos')
+  console.log(ypos)
+  console.log('top')
+  console.log(afterHero.offsetTop)
+
+
+  //  ----------------------------------- 1 -------------------------
+
+       if(
+       ((ypos > (heroAnimation.offsetTop + (firsText.offsetHeight / 2)) && scrollDir == 'down'))  ||
+        ((ypos < (heroAnimation.offsetTop + (firsText.offsetHeight))) && scrollDir== 'up')
+       ) {
+        smoothFirstTextY += e.deltaY * -0.002;
+        smoothFirstTextY = Math.min(Math.max(smoothFirstTextY, 0), 1 );
+        firsText.style.opacity = `${smoothFirstTextY}`;
+         
+        //  smoothInfograficaY += e.deltaY * -0.04;
+        //  smoothInfograficaY = Math.min(Math.max(smoothInfograficaY, -100), 0 );
+    
+        //  smoothInfograficaScale += e.deltaY * -0.001;
+        //  smoothInfograficaScale = Math.max(Math.min(2.5, smoothInfograficaScale), 1);
+    
+    
+        //  if(firsText.style.opacity == 0)
+        //  infografica.style.transform = `translateY(0vh) scale(${smoothInfograficaScale})`;
+         }
   
-  var x = heroAnimation.offsetHeight;   // il div è 250vh   
-  var z = x +  heroAnimation.offsetTop;
+    //  ----------------------------------- 2 -------------------------
+    // if(calc >= (z- (height / 30*16))) {
+      if(
+       ((ypos > (afterHero.offsetTop - height) && scrollDir == 'down')) ||
 
+       ((ypos < (afterHero.offsetTop + (firsText.offsetHeight + (42*16)))) && scrollDir== 'up')
+      ) {
+          smoothLastTextY += e.deltaY * 0.002;
+          smoothLastTextY = Math.min(Math.max(smoothLastTextY, 0), 1 );
+          ricicloRed.style.opacity = `${smoothLastTextY}`;
+  
+        //   ricicloRed.classList.remove('hiddenLastDivAnimation')
+        //   ricicloRed.classList.add('visibleLastDivAnimation')
+        //   //si 'sblocca lo scroll  
+           }
+        //   else {
+        //     ricicloRed.classList.remove('visibleLastDivAnimation')
+        //     ricicloRed.classList.add('hiddenLastDivAnimation')
+        //   }
+  
+  
+        if((ypos - heroAnimation.offsetTop) >= 0)  {
+          //si blocca lo scroll
+         // console.log('BLOCCATO');
+  
+        //  console.log('---------------------------');
+  
+          // console.log(ypos);
+          // console.log(heroAnimation.offsetTop);
+          // console.log(heroAnimation.offsetTop + (firsText.offsetHeight))
+       }
+       if(calc >= z)  {
+         console.log('SBLOCCATO')
+         //si 'sblocca lo scroll
+         }
+  
 
-  if((ypos > (heroAnimation.offsetTop + 200))) {
-    smoothFirstTextY += e.deltaY * -0.002;
-    smoothFirstTextY = Math.min(Math.max(smoothFirstTextY, 0), 1 );
-    firsText.style.opacity = `${smoothFirstTextY}`;
-     
-     smoothInfograficaY += e.deltaY * -0.04;
-     smoothInfograficaY = Math.min(Math.max(smoothInfograficaY, -100), 0 );
-
-     smoothInfograficaScale += e.deltaY * -0.001;
-     smoothInfograficaScale = Math.max(Math.min(2.5, smoothInfograficaScale), 1);
-
-
-     if(firsText.style.opacity == 0)
-     infografica.style.transform = `translateY(0vh) scale(${smoothInfograficaScale})`;
-      
-    //  if(infografica.style.transform == `translateY(0vh) scale(1)`){
-    //      infografica.style.transform = `scale(1) translateY(${smoothInfograficaY}%)`;
-    //     } 
-     }
-
-  //    if(infografica.style.transform == `translateY(-100vh) scale(1)`){
-  //     ricicloRed.classList.remove('hiddenLastDivAnimation')
-  //     ricicloRed.classList.add('visibleLastDivAnimation')
-  //  } 
-
-      if(calc >= (z- (height / 45*16))) {
-        ricicloRed.classList.remove('hiddenLastDivAnimation')
-        ricicloRed.classList.add('visibleLastDivAnimation')
-        //si 'sblocca lo scroll  
-        }
-        else {
-          ricicloRed.classList.remove('visibleLastDivAnimation')
-          ricicloRed.classList.add('hiddenLastDivAnimation')
-        }
-
-}
-//------------------
-
-
-// let supportOffset = window.pageYOffset !== undefined,
-//   lastKnownPos = 0,
-//   scrollDir,
-//   scrollAmount,
-//   scrollTotalAmount = 0,
-//   currYPos;
-// window.addEventListener('wheel', (e) => {
-
-//   currYPos = supportOffset ? window.pageYOffset : document.body.scrollTop;
-//   scrollDir = lastKnownPos > currYPos ? 'up' : 'down';
-//   scrollAmount = Math.abs(lastKnownPos - currYPos);
-//   scrollTotalAmount += scrollAmount;
-
-//   lastKnownPos = currYPos;
-//   console.log(lastKnownPos, currYPos, scrollDir, scrollAmount, scrollTotalAmount)
-// });
+         
+  });
 
 
 // -------------------------------------------------------------------- FINE READY  --------------------------------------------------------------------------------------

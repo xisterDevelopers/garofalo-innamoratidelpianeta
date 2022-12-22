@@ -749,17 +749,21 @@ section {
     overflow: hidden;
   }
 
+  #firstText {
+    -webkit-transition: all 1s cubic-bezier(.19,1,.22,1) !important;
+  }
   #ricicloRed {
     position: absolute;
     width: 100%;
     left: 0;
      top: 50%;
-    transform: translateY(-50%); 
+    transform: translateY(-30%); 
+    -webkit-transition: all 1s cubic-bezier(.19,1,.22,1) !important;
     margin: 0;
   }
 
    .afterHeroAnimation {
-      margin-top: -42rem;  
+      margin-top: calc(-50vh + 400px);  
   } 
 
   .visibleLastDivAnimation {
