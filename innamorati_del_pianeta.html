@@ -10,10 +10,11 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <script type="text/javascript" src="js/jsLP.js"></script>
+   <script type="text/javascript" src="js/jsLP.js"></script>
+ <script type="text/javascript" src="js/jsScroll.js"></script> 
 </head>
   <body>
-<script type="module">
+ <script type="module">
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
 
   const swiper = new Swiper(".mySwiper", {
@@ -30,9 +31,7 @@
     },
     });
 
-</script>
-
-
+</script> 
 
     <!--header -->
     <header class="header" id="header">
@@ -66,8 +65,8 @@
     <!--fine header -->
 
      <!--body -->
-    <div class="container">
-      <section style="opacity: 0;">
+     <div class="container">
+       <section style="opacity: 0;">
       <div class="fullVideo">
         <iframe width="100%" height="100%" id="videoframe"
         src="" allow='autoplay; encrypted-media' allowfullscreen showinfo="0" frameborder="0" autohide="1">
@@ -84,7 +83,7 @@
           document.getElementById("videoframe").src =  link;
           </script>
       </div> 
-    </section>
+    </section> 
 
   <section id="impegno">
       <div class="text smooth">
@@ -99,13 +98,33 @@
           <div class="redBrandon two">Innoviamo</div>
          <div class="brandon">All'insegna della sostenibilità</div>
       </div> 
-    </section>
+    </section> 
 
-  <section id="infografica" style="opacity: 0;" class="infograficaPasta smooth">
+    <section id="about">
+      <h2>Find out who we are</h2>
+      <p>Keep scrolling</p>
+      <i class="fas fa-chevron-down"></i>
+      <div class="profiles">
+        <img id="boom" src="https://picsum.photos/id/237/200/300" alt="Hand holding a Heart on a stick" style="width: 150px; position: absolute;">
+        <div class="column-container">
+          <div id="philipp" class="column">
+            <div class="profile-image"></div>
+            <h3>Philipp</h3>
+          </div>
+        </div>
+        <div class="column-container">
+          <div id="lisa" class="column">
+            <div class="profile-image"></div>
+            <h3>Lisa</h3>
+          </div>
+        </div>
+    </section> 
+    
+   <section id="infografica" style="opacity: 0;" class="infograficaPasta smooth">
        <img alt="infografica" src="assets/svg/infografica.svg"><img>
-    </section>
+    </section> 
 
-      <section style="opacity: 0;" class="smooth"> 
+       <section style="opacity: 0;" class="smooth"> 
       <div class="ricicloRed">
         <div class="innerContainer">
         <div class="image">
@@ -121,17 +140,17 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> 
 
-    <section style="opacity: 0;">
+     <section style="opacity: 0;">
       <div class="text smooth">
         <div class="redBrandon three">Compensiamo le emissioni</div>
         <div class="nunito">Abbiamo aderito al progetto Impatto Zero di Lifegate per compensare le emissioni di CO2
           legate alla produzione del packaging dei nostri prodotti</div>
       </div> 
-    </section>
+    </section> 
 
-  <section style="opacity: 0;">
+   <section style="opacity: 0;">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
 
@@ -196,20 +215,20 @@
           </div>
       </div>
     </div>
-  </section>
+  </section> 
 
 
-  <section style="opacity: 0">
+ <section style="opacity: 0">
       <div class="ricicloGrey smooth">
         <div class="innerContainer">
-        <div class="text">
+         <div class="text">
           <div class="brandon">
             Un buon imballaggio protegge la pasta e l'ambiente
           </div>
           <div class="nunito">
             La nostra scelta sostenibile non si limita ai pacchi. Da 15 anni utilizziamo per gli imballaggi secondari carta riciclata, ottenuta dal macero della raccolta differenziata delle aziende e dei cittadini campani e certificata greenboxX® <br><br><br> In questo modo nel 2021 abbiamo risparmiato:
           </div>
-        </div>
+        </div> 
         <div class="flexNumber">
           <div class="text">
             <img src="assets/svg/co2.svg" alt="svg"></img>
@@ -235,9 +254,9 @@
           </div>
       </div>
     </div>
-  </section>
+  </section> 
 
-    <section style="opacity: 0;">
+   <section style="opacity: 0;">
       <div class="text smooth">
         <div class="brandon smallB">Le nostre altre iniziative sostenibili</div>
         <div class="nunito">Dall'energia solare alle cannucce di pasta ecologiche, il nostro impegno per l'ambiente è molteplice e in continua evoluzione. Scopri quanto siamo innamorati del pianeta!</div>
@@ -245,15 +264,15 @@
           <a href="#" title="button" class="red">visita il nostro sito</a>
         </div>
       </div> 
-    </section>
+    </section> 
 
     <section class="lineSection">
       <div class="line smooth">
       <img alt="line" src="assets/svg/line.svg"></img>
     </div>
-    </section>
+    </section> 
 
-    <section style="opacity: 0;" id="fattoDiGesti">
+     <section style="opacity: 0;" id="fattoDiGesti">
       <div class="text smooth">
         <div class="brandon">Innam<span class="bigB">ó</span>rati del pianeta</div>
         <div class="brandon smallB">
@@ -262,9 +281,9 @@
         </div>
         <div class="nunito bigN">Cosa possiamo fare insieme per il pianeta?</div>
       </div> 
-    </section>
+    </section> 
 
-    <section style="opacity: 0;">
+     <section style="opacity: 0;">
       <div class="text smooth">
             <div class="titleImg">
               <div class="image"> <img alt="pentola" src="assets/img/pentola.png"></img></div>
@@ -276,9 +295,9 @@
                 <a href="#" title="button" class="red"> Gioca con noi</a>
               </div>
               </div>
-     </section>
+     </section> 
 
-     <section style="opacity: 0;">
+      <section style="opacity: 0;">
       <div class="text smooth">
             <div class="titleImg">
               <div class="image"> <img alt="pentola" src="assets/img/bicchiere.png"></img></div>
@@ -286,20 +305,16 @@
             </div>
             <div class="nunito">Quando c'è amore nulla va distrutto: si ricicla! Il gesto finale è anche quello più importante. I nostri pack sono di plastica 100% RICICLABILE quindi conferiscili sempre nella raccolta differenziata della PLASTICA, un'attenzione che fa bene all'ambiente.</div>
               </div>
-     </section>
-
+     </section> 
+ 
   <section style="opacity: 0;">
       <div class="fullVideo"> 
         <iframe width="100%" height="100%"
         src="https://www.youtube.com/embed/ECyvxaRINFE?autoplay=0&amp;mute=1&amp;rel=0" allow='autoplay; encrypted-media' allowfullscreen showinfo="0" frameborder="0" autohide="1">
         </iframe>
-        <!-- 
-           <video width="100%" height="100%" controls poster="assets/img/apple.jpeg">
-          <source src="movie.mp4" type="video/mp4">
-        </video> -->
       </div> 
-    </section>
-  </div>
+    </section> 
+  </div> 
       <!--fine body -->
       <!--footer -->
     <footer class="footer">

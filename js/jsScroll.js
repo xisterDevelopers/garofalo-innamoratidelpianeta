@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(event){
        onUpdate: ({progress}) => aboutTl.progress() < progress ? aboutTl.progress(progress) : null,
       animation: aboutTl,
       trigger: "#about",
-      start: "top 0",
+      start: "top",
       end: "=+2900",
       scrub: true,
       pin: true,
@@ -45,7 +45,5 @@ document.addEventListener("DOMContentLoaded", function(event){
         //self.disable()
         self.animation.progress(1)
       }
-      
     });
-
 });

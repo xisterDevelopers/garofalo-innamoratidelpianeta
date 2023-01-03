@@ -848,26 +848,6 @@ section {
     text-align: center;
   }
   
-  i {
-    animation: 2s infinite linear pump;
-    position: relative;
-    margin-top: 10px;
-  }
-  
-  @keyframes pump {
-    0% {
-      top: -10px;
-    }
-  
-    50% {
-      top: 10px;
-    }
-  
-    100% {
-      top: -10px;
-    }
-  }
-  
   .profiles {
     width: 100%;
     display: flex;
