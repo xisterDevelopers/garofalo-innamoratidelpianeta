@@ -622,7 +622,6 @@ section {
   }
 
 
-
   /* hero animation */
 
   /* .heroAnimation {
@@ -838,57 +837,11 @@ section {
   
   /* scroll trigger */
 
-  #about {
+  #animation {
     position: relative;
-    height: 100vh;
+    height: max-content;
     min-height: 400px;
     padding: 10px 5%;
-    background-color: black;
-    color: white;
+    background-color: transparent;
     text-align: center;
-  }
-  
-  .profiles {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .profiles .column-container {
-    position: relative;
-    width: 50%;
-    height: 300px;
-    /* border: 1px solid white; */
-  }
-  
-  .profiles .column {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .profile-image {
-    height: 200px;
-    width: 200px;
-    background-color: black;
-  }
-  
-  #philipp .profile-image {
-    background-image: url(https://picsum.photos/id/237/200/300);
-    background-position: center center;
-    background-size: cover;
-  }
-  
-  #lisa .profile-image {
-    background-image: url(https://picsum.photos/id/237/200/300);
-    background-position: center center;
-    background-size: cover;
   }
