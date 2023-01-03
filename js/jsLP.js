@@ -49,6 +49,55 @@ function scrollAncora (id) {
 
 ready('.counter', (stat) => {
 
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.defaults({
+      ease: "none",
+      duration: 2.5
+    });
+    
+    let aboutTl = gsap
+      .timeline({
+        // defaults: {
+        //     duration: 1
+        // },
+        paused: true
+      })
+      .from("#boom", {
+        scaleX: 0,
+        scaleY: 0,
+        rotation: -270,
+        duration: 50,
+        ease: "elastic"
+      })
+      .from("#lisa", {
+        xPercent: 100,
+        duration: 30
+      })
+      .from("#philipp", {
+        xPercent: -100,
+        duration: 60
+      });
+    
+    ScrollTrigger.create({
+       onUpdate: ({progress}) => aboutTl.progress() < progress ? aboutTl.progress(progress) : null,
+      animation: aboutTl,
+      trigger: "#about",
+      start: "top 0",
+      end: "=+2900",
+      scrub: true,
+      pin: true,
+      id: "#about",
+      
+      //once: true,
+        
+      onLeave: function(self) {
+        //self.disable()
+        self.animation.progress(1)
+      }
+    });
+
+
+
   // -------------------------------------------------------------------- ANIMAZIONE NUMERI --------------------------------------------------------------------------------------
 
 
@@ -258,37 +307,5 @@ let smoothY = 1;
 
          
   //});
-
-
 // -------------------------------------------------------------------- FINE READY  --------------------------------------------------------------------------------------
-});
-
-// -------------------------------------------------------------------- SLIDER --------------------------------------------------------------------------------------
-
-const slider = document.querySelector(".horizontal-slider");
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener("mousedown", (e) => {
-  isDown = true;
-  slider.classList.add("active");
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener("mouseleave", () => {
-  isDown = false;
-  slider.classList.remove("active");
-});
-slider.addEventListener("mouseup", () => {
-  isDown = false;
-  slider.classList.remove("active");
-});
-slider.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 3; //scroll-fast
-  slider.scrollLeft = scrollLeft - walk;
-  console.log(walk);
 });
