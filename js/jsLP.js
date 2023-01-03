@@ -165,90 +165,87 @@ let smoothY = 1;
 
 // -------------------------------------------------------------------- SCROLL ANIMAZIONE HERO + INFOGRAFICA  --------------------------------------------------------------------------------------
 
-var heroAnimation = document.getElementById("heroAnimation");
+// var heroAnimation = document.getElementById("heroAnimation");
 
+// let smoothInfograficaY=1,
+//     smoothInfograficaScale=1,
+//     smoothFirstTextY=1,
+//     smoothLastTextY=1;
 
-let smoothInfograficaY=1,
-    smoothInfograficaScale=1,
-    smoothFirstTextY=1,
-    smoothLastTextY=1;
-
-    var ricicloRed = document.getElementById("ricicloRed");
-    var firsText = document.getElementById('impegno');
-    var infografica = document.getElementById('infografica');
-    var afterHero = document.getElementById('afterHeroAnimation');
+//     var ricicloRed = document.getElementById("ricicloRed");
+//     var firsText = document.getElementById('impegno');
+//     var infografica = document.getElementById('infografica');
+//     var afterHero = document.getElementById('afterHeroAnimation');
     
-    var x = heroAnimation.offsetHeight;   // il div è 250vh   
-    var z = x +  heroAnimation.offsetTop;
+//     var x = heroAnimation.offsetHeight;   // il div è 250vh   
+//     var z = x +  heroAnimation.offsetTop;
 
-//let ypos = window.pageYOffset !== undefined,
-let  lastKnownPos = 0,
-  scrollDir,
-  scrollAmount,
-  scrollTotalAmount = 0,
-  currYPos;
+// let  lastKnownPos = 0,
+//   scrollDir,
+//   scrollAmount,
+//   scrollTotalAmount = 0,
+//   currYPos;
 
 
-  let stopBool = false;
-  window.addEventListener('wheel', (e) => {
+//   let stopBool = false;
+//   window.addEventListener('wheel', (e) => {
 
-  let ypos = window.pageYOffset,
-  height = window.innerHeight,
-  calc = ypos + height;
+//   let ypos = window.pageYOffset,
+//   height = window.innerHeight,
+//   calc = ypos + height;
 
-  currYPos = ypos ? window.pageYOffset : document.body.scrollTop;
-  scrollDir = lastKnownPos > currYPos ? 'up' : lastKnownPos < currYPos ? 'down' : 'stop';
-  scrollAmount = Math.abs(lastKnownPos - currYPos);
-  scrollTotalAmount += scrollAmount;
+//   currYPos = ypos ? window.pageYOffset : document.body.scrollTop;
+//   scrollDir = lastKnownPos > currYPos ? 'up' : lastKnownPos < currYPos ? 'down' : 'stop';
+//   scrollAmount = Math.abs(lastKnownPos - currYPos);
+//   scrollTotalAmount += scrollAmount;
 
-  lastKnownPos = currYPos;
-  //console.log(lastKnownPos, currYPos, scrollDir, scrollAmount, scrollTotalAmount)
+//   lastKnownPos = currYPos;
 
   //  ----------------------------------- first text -------------------------
-       if(
-       ((ypos > (heroAnimation.offsetTop + (firsText.offsetHeight / 2)) && scrollDir == 'down'))  ||
-        ((ypos < (heroAnimation.offsetTop + (firsText.offsetHeight))) && scrollDir== 'up')
-       ) {
+      //  if(
+      //  ((ypos > (heroAnimation.offsetTop + (firsText.offsetHeight / 2)) && scrollDir == 'down'))  ||
+      //   ((ypos < (heroAnimation.offsetTop + (firsText.offsetHeight))) && scrollDir== 'up')
+      //  ) {
        
-        smoothFirstTextY += e.deltaY * -0.002;
-        smoothFirstTextY = Math.min(Math.max(smoothFirstTextY, 0), 1 );
-        firsText.style.opacity = `${smoothFirstTextY}`;
+      //   smoothFirstTextY += e.deltaY * -0.002;
+      //   smoothFirstTextY = Math.min(Math.max(smoothFirstTextY, 0), 1 );
+      //   firsText.style.opacity = `${smoothFirstTextY}`;
          
-         }
+      //    }
 
       //  ----------------------------------- infografica -------------------------
 
-          if(
-            (ypos > (heroAnimation.offsetTop + (firsText.offsetHeight)))
-            ) {
+        //   if(
+        //     (ypos > (heroAnimation.offsetTop + (firsText.offsetHeight)))
+        //     ) {
 
-             smoothInfograficaScale += e.deltaY * -0.001;
+        //      smoothInfograficaScale += e.deltaY * -0.001;
 
-          stopBool= false;
-         if(((smoothInfograficaScale * 2.5) >= 1) && ((smoothInfograficaScale * 2.5) <= 2.5)) {
-               infografica.style.transform = `scale(${smoothInfograficaScale * 2.5})`;
-               stopBool= true;
-             }
+        //   stopBool= false;
+        //  if(((smoothInfograficaScale * 2.5) >= 1) && ((smoothInfograficaScale * 2.5) <= 2.5)) {
+        //        infografica.style.transform = `scale(${smoothInfograficaScale * 2.5})`;
+        //        stopBool= true;
+        //      }
   
-         if(smoothInfograficaScale < 2.5 && !stopBool)  {
-          smoothInfograficaY += e.deltaY * -0.04;
-          smoothInfograficaY = Math.min(Math.max(smoothInfograficaY, -100), 0 );
-          infografica.style.transform = `translateY(${smoothInfograficaY}%) scale(1)`;
-         }
-        }
+        //  if(smoothInfograficaScale < 2.5 && !stopBool)  {
+        //   smoothInfograficaY += e.deltaY * -0.04;
+        //   smoothInfograficaY = Math.min(Math.max(smoothInfograficaY, -100), 0 );
+        //   infografica.style.transform = `translateY(${smoothInfograficaY}%) scale(1)`;
+        //  }
+        // }
 
       //  ----------------------------------- riciclo red -------------------------
 
-         if(infografica.style.transform == `translateY(-100%) scale(1)` && scrollDir == 'down') 
-         {
-          ricicloRed.classList.remove('hiddenLastDivAnimation');
-           ricicloRed.classList.add('visibleLastDivAnimation');
-          }
-          else       
-             {
-            ricicloRed.classList.remove('visibleLastDivAnimation');
-             ricicloRed.classList.add('hiddenLastDivAnimation');
-            }
+        //  if(infografica.style.transform == `translateY(-100%) scale(1)` && scrollDir == 'down') 
+        //  {
+        //   ricicloRed.classList.remove('hiddenLastDivAnimation');
+        //    ricicloRed.classList.add('visibleLastDivAnimation');
+        //   }
+        //   else       
+        //      {
+        //     ricicloRed.classList.remove('visibleLastDivAnimation');
+        //      ricicloRed.classList.add('hiddenLastDivAnimation');
+        //     }
 
     //-------------------------------
   
@@ -260,7 +257,7 @@ let  lastKnownPos = 0,
       //    }
 
          
-  });
+  //});
 
 
 // -------------------------------------------------------------------- FINE READY  --------------------------------------------------------------------------------------

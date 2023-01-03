@@ -197,13 +197,10 @@ footer .innerContainer {
     background-image: url("../assets/svg/Vector\ 4.svg") ;
    }
 .infograficaPasta {
-    /* position: relative;
-    overflow: hidden; */
-    position: absolute;
+     position: relative;
+    overflow: hidden; 
     overflow: initial;
-    /* top: 0; */
     margin-top: 0;
-    z-index: 3;
     transform-origin: top center;
     width: 100%;
 }
@@ -618,22 +615,67 @@ section {
 .text:nth-child(3) .counter > span {
   transition-delay: 0.8s;
 }
+  
 
-/* carousel  */
-  .horizontal-slider {
-    margin: 0rem;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    display: flex;
-    align-items: center;
-    position: relative;
+  .smooth {
+    transition: transform 0.4s ease-out !important;
   }
+
+
+
+  /* hero animation */
+
+  /* .heroAnimation {
+    position: relative;
+    height: 250vh;
+  }
+
+  .sticky {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: sticky;
+    overflow: hidden;
+  }
+
+  #infografica {
+    transform-origin: top center;
+    -webkit-transition: all 1s cubic-bezier(.19,1,.22,1) !important;
+  }
+
+  #firstText {
+    -webkit-transition: all 1s cubic-bezier(.19,1,.22,1) !important;
+  }
+  #ricicloRed {
+    position: absolute;
+    width: 100%;
+    left: 0;
+     top: 50%;
+    transform: translateY(-30%); 
+    -webkit-transition: all 1s cubic-bezier(.19,1,.22,1) !important;
+    margin: 0;
+  }
+
+   .afterHeroAnimation {
+      margin-top: calc(-50vh + 400px);  
+  } 
+
+  .visibleLastDivAnimation {
+    opacity: 1 !important;
+    -webkit-transition: all 3s cubic-bezier(.19,1,.22,1) !important;
+    transform: translateY(-50%);
+  }
+  .hiddenLastDivAnimation {
+    opacity: 0 !important;
+    -webkit-transition: all 1.5s cubic-bezier(.19,1,.22,1) !important;
+    transform: translateY(-50%);
+  } */
+
+
+
+  /* carousel  */
   .active {
     scroll-snap-type: none;
-  }
-  .horizontal-slider::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
   }
   .card {
     position: relative;
@@ -681,18 +723,6 @@ section {
     overflow: visible;
   }
 
-  /* @media screen and (max-width: 968px) {
-    .card {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        gap: 0;
-    }
-    .card .red {
-      position: relative; 
-    }
-  } */
-
-
   .card .red .brandon {
     padding: 0;
   }
@@ -705,79 +735,102 @@ section {
     width: 90vw;
     position: relative;
   }
-  
-  /* .card:nth-child(7n) {
-    background-color: tomato;
+
+  /*  swiper */ 
+  .swiper-wrapper {
+    height: auto;
+    width: auto;
   }
-   */
-  .hor-scroll .btn {
-    position: absolute;
-  
-    top: 185px;
-    transform: translateY(-50%);
-  
-    height: 30px;
-    width: 30px;
-  
-    border-radius: 2px;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-  
-    z-index: 1;
+  .swiper-slide {
+    width: auto;
   }
-  
-
-  .smooth {
-    transition: transform 0.4s ease-out !important;
+  .swiper {
+    max-width: 1500px;
   }
-
-
-
-  /* hero animation */
-
-  .heroAnimation {
+  .card .background_mobile {
+    display: none;
     position: relative;
-    height: 250vh;
+  }
+  @media screen and (max-width:1200px) {
+    .card .absolute {
+      top: 56%;
+    }
+    .swiper {
+      padding-bottom: 130px;
+    }
   }
 
-  .sticky {
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    position: sticky;
-    overflow: hidden;
+  @media screen and (max-width:992px)  {
+    .responsiveB {
+      font-size: 30px !important;
+    }
+    .responsiveSmallB {
+      font-size: 25px !important;
+    }
+    .bigNumber {
+      font-size: 100px;
+      top: -18px;
+    }
+    .swiper {
+      padding-bottom: 130px;
+      padding-right: 60px;
+    }
+    .bigNumber {
+      font-size: 120px !important;
+    }
   }
+  @media screen and (max-width:670px)  {
+    .card .red {
+      margin-left: 25px;
+      max-width: 314px;
+      min-height: 263px;
+      box-sizing: border-box;
+      padding: 16px 25px 38px 48px;
+      left: 15px;
+    }
+    .card .background {
+      display: none;
+    }
+    .card .red .bigNumber {
+      left: -24px;
+    }
+    .card .background_mobile {
+      display: block;
+    }
 
-  #infografica {
-    transform-origin: top center;
-    -webkit-transition: all 1s cubic-bezier(.19,1,.22,1) !important;
+    .card .absolute {
+      top: 270px;
+      padding-left: 50px;
+    }
+    .responsiveB, .responsiveSmallB {
+      color: #292929 !important;
+      font-size: 24px !important;
+      text-align: center !important;
+    }
+    .red .responsiveB {
+      color: #FFFFFF !important;
+      text-align: left !important;
+    }
+    .responsiveSmallB {
+      padding-top: 16px;
+    }
+    .card .brandon {
+      width:auto;
+    }
+    .swiper {
+      padding-bottom: 200px;
+      padding-right: 10px;
+    }
+    .card {
+      margin-left: 0;
+    }
+    .first_absolute {
+      top:440px !important;
+      padding-left: 0 !important;
+    }
   }
-
-  #firstText {
-    -webkit-transition: all 1s cubic-bezier(.19,1,.22,1) !important;
-  }
-  #ricicloRed {
-    position: absolute;
-    width: 100%;
-    left: 0;
-     top: 50%;
-    transform: translateY(-30%); 
-    -webkit-transition: all 1s cubic-bezier(.19,1,.22,1) !important;
-    margin: 0;
-  }
-
-   .afterHeroAnimation {
-      margin-top: calc(-50vh + 400px);  
-  } 
-
-  .visibleLastDivAnimation {
-    opacity: 1 !important;
-    -webkit-transition: all 3s cubic-bezier(.19,1,.22,1) !important;
-    transform: translateY(-50%);
-  }
-  .hiddenLastDivAnimation {
-    opacity: 0 !important;
-    -webkit-transition: all 1.5s cubic-bezier(.19,1,.22,1) !important;
-    transform: translateY(-50%);
+  @media screen and (max-width:670px) {
+    .card .absolute {
+      top: 270px
+    }
   }
