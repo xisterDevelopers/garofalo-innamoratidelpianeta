@@ -215,9 +215,10 @@ footer .innerContainer {
     background: radial-gradient(#f2f2f200, #ffffff, #ffffff);
     opacity: 1;
 } */
-.infograficaPasta img {
+.infograficaPasta svg {
     position: relative;
     width: 100%;
+    height: auto;
 }
 .infograficaPasta {
     padding: 1rem 5rem;

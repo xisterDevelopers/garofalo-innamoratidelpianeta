@@ -148,7 +148,8 @@ ready('.counter', (stat) => {
 // -------------------------------------------------------------------- SCROLL ANIMAZIONE PARALLASSE  --------------------------------------------------------------------------------------
 
 const elArr = document.getElementsByClassName('smooth');
-//window.onwheel = smooth;
+const infograficaID = document.getElementById('infografica');
+//infograficaID.onwheel = smooth;
 
 function smooth(event) {
   event.preventDefault();

@@ -10,18 +10,19 @@ document.addEventListener("DOMContentLoaded", function(event){
    ricicloRedId.style.bottom = '15vh';
    ricicloRedId.style.marginTop = marginTop;
 
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin);
     gsap.defaults({
       ease: "none",
-      duration: 2.5
+      duration: 1.5
     });
     
 
     let aboutTl = gsap
       .timeline({
-        // defaults: {
-        //     duration: 1
-        // },
+         defaults: {
+          duration: 2000, 
+          ease:'ease' 
+         },
         paused: true
       })
       .to("#impegno", {
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         duration: 2000,
         ease: "ease"
       })
+      .fromTo(".patharrowLine1", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"})
     
     ScrollTrigger.create({
        onUpdate: ({progress}) => aboutTl.progress() < progress ? aboutTl.progress(progress) : null,
@@ -83,10 +85,87 @@ document.addEventListener("DOMContentLoaded", function(event){
    });
 
 
-    //  ScrollTrigger.create({
-    //   trigger: "#infografica",
-    //   start: "bottom 100px", 
-    //   end: "bottom top",
-    //   pin: true
-    // });
+  //  gsap.to(".arrow2", {
+  //   scrollTrigger : {
+  //     trigger: ".arrow2",
+  //     start: "top bottom",
+  //     end: "bottom bottom",
+  //     //toggleActions: "play none reverse reset",
+  //     //markers: true,
+  //     scrub: true,
+  //   },
+  //   opacity: 1,
+  //   duration: 1000
+  // });
+  // gsap.to(".arrow3", {
+  //   scrollTrigger : {
+  //     trigger: ".arrow3",
+  //     start: "top bottom",
+  //     end: "bottom bottom",
+  //     //toggleActions: "play none reverse reset",
+  //     //markers: true,
+  //     scrub: true,
+  //   },
+  //   opacity: 1,
+  //   duration: 1000
+  // });
+  // gsap.to(".arrow4", {
+  //   scrollTrigger : {
+  //     trigger: ".arrow4",
+  //     start: "top bottom",
+  //     end: "bottom bottom",
+  //     //toggleActions: "play none reverse reset",
+  //     //markers: true,
+  //     scrub: true,
+  //   },
+  //   opacity: 1,
+  //   duration: 1000
+  // });
+
+
+
+  //motion path
+
+//   var action1 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
+//   scrollTrigger: {
+//     trigger: ".arrow1",
+//     scrub:0,
+//     start: "top bottom",
+//     end: "bottom bottom", // new
+//   }})
+// .fromTo(".patharrowLine1", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"}, 0)
+
+var action2 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
+scrollTrigger: {
+  trigger: "#arrow2",
+  scrub:0,
+  start: "100px bottom",
+  end: "bottom bottom", // new
+}})
+.fromTo(".patharrowLine2", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"}, 0)
+.fromTo(".patharrow2", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"}, 0)
+//.fromTo(".patharrow2", {opacity: "0"}, {opacity: "1"}, 1)
+
+var action3 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
+scrollTrigger: {
+  trigger: "#arrow3",
+  scrub:0,
+  markers: true,
+  start: "100px bottom",
+  end: "bottom bottom", // new
+}})
+.fromTo(".patharrowLine3", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"}, 0)
+.fromTo(".patharrow3", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"}, 0)
+
+
+var action4 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
+scrollTrigger: {
+  trigger: "#arrow4",
+  scrub:0,
+//  markers: true,
+  start: "40% bottom",
+  end: "200% bottom",
+}})
+.fromTo(".patharrowLine4", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"}, 0)
+.fromTo(".patharrow4", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"}, 0)
 });
