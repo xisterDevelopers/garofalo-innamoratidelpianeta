@@ -845,3 +845,6 @@ section {
     background-color: transparent;
     text-align: center;
   }
+  #ricicloRed {
+    position: sticky;
+  }

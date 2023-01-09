@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 
 
-  const marginTop =  -(infograficaPosition - 200);
-  const ricicloRedId = document.getElementById('ricicloRed');
-  const ricicloRedTop = ricicloRedId.offsetTop - (marginTop);
-  ricicloRedId.style.marginTop = marginTop;
+   const marginTop =  -(infograficaPosition - 200);
+   const ricicloRedId = document.getElementById('ricicloRed');
+   ricicloRedId.style.bottom = '15vh';
+   ricicloRedId.style.marginTop = marginTop;
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.defaults({
@@ -16,18 +16,6 @@ document.addEventListener("DOMContentLoaded", function(event){
       duration: 2.5
     });
     
-    let ricicloRedTl = gsap
-    .timeline({
-      // defaults: {
-      //     duration: 1
-      // },
-      paused: true
-    })
-    .to("#ricicloRed", {
-      opacity: 1,
-      duration: 2000,
-      ease: "ease"
-    })
 
     let aboutTl = gsap
       .timeline({
@@ -38,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       })
       .to("#impegno", {
         opacity: 0,
-        duration: 2000,
+        duration: 1000,
         ease: "ease"
       })
       .to("#infografica", {
@@ -50,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function(event){
     
     ScrollTrigger.create({
        onUpdate: ({progress}) => aboutTl.progress() < progress ? aboutTl.progress(progress) : null,
-      animation: aboutTl,
+      // onUpdate: self => console.log("progress:", self.progress),
+       animation: aboutTl,
       trigger: "#animation",
       start: "top top",
       end: "bottom bottom",
@@ -66,10 +55,38 @@ document.addEventListener("DOMContentLoaded", function(event){
       }
     });
 
-     ScrollTrigger.create({
-      trigger: "#ricicloRed",
-      start: "top 100px", 
-      end: "bottom top",
-      pin: true
-    });
+  //----------------------------------
+    
+    let secondTl = gsap
+    .to("#ricicloRed", {
+      opacity: 1,
+      duration: 1000,
+      ease: "ease"
+    })
+
+    ScrollTrigger.create({
+      onUpdate: ({progress}) => secondTl.progress() < progress ? secondTl.progress(progress) : null,
+      animation: secondTl,
+     trigger: "#animation",
+     start: "bottom 110%", 
+     end: "bottom 60%",
+     id: "#animation",
+     scrub: true,
+   //  pin: true,
+     
+     //once: true,
+       
+     onLeave: function(self) {
+       //self.disable()
+       self.animation.progress(1)
+     }
+   });
+
+
+    //  ScrollTrigger.create({
+    //   trigger: "#infografica",
+    //   start: "bottom 100px", 
+    //   end: "bottom top",
+    //   pin: true
+    // });
 });
