@@ -829,11 +829,6 @@ section {
       padding-left: 0 !important;
     }
   }
-  @media screen and (max-width:670px) {
-    .card .absolute {
-      top: 270px
-    }
-  }
 
   
   /* scroll trigger */
@@ -849,3 +844,37 @@ section {
   #ricicloRed {
     position: sticky;
   }
+
+  .tablet, .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+
+  @media screen and (min-width:600px) and (max-width:1399px) {
+    .desktop {
+      display: none !important;
+    }
+    .mobile {
+      display: none !important;
+    }
+    .tablet {
+      display: block !important;
+    }
+  }
+
+  @media screen and (max-width:599px) {
+    .desktop {
+      display: none !important;
+    }
+    .tablet {
+      display: none !important;
+    }
+    .mobile {
+      display: block !important;
+    }
+  } 
+
+
+

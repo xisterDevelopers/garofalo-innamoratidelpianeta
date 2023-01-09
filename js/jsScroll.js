@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function(event){
 
    const marginTop =  -(infograficaPosition - 200);
    const ricicloRedId = document.getElementById('ricicloRed');
-   ricicloRedId.style.bottom = '15vh';
-   ricicloRedId.style.marginTop = marginTop;
+   window.innerWidth < 968 ? '' :  ricicloRedId.style.bottom = '15vh';
+   ricicloRedId.style.marginTop = window.innerWidth < 600 ? 0 : marginTop;
 
     gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin);
     gsap.defaults({
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         ease: "ease"
       })
       .to("#infografica", {
-        scale: 1,
+        scale: window.innerWidth < 600 ? 2.8 : 1,
         y: -infograficaPosition + 100,
         duration: 2000,
         ease: "ease"
@@ -70,8 +70,9 @@ document.addEventListener("DOMContentLoaded", function(event){
       onUpdate: ({progress}) => secondTl.progress() < progress ? secondTl.progress(progress) : null,
       animation: secondTl,
      trigger: "#animation",
-     start: "bottom 110%", 
+     start: "bottom 100%", 
      end: "bottom 60%",
+     markers: true,
      id: "#animation",
      scrub: true,
    //  pin: true,
@@ -137,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 var action2 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
 scrollTrigger: {
-  trigger: "#arrow2",
+  trigger: ".arrow2",
   scrub:0,
   start: "100px bottom",
   end: "bottom bottom", // new
@@ -148,9 +149,9 @@ scrollTrigger: {
 
 var action3 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
 scrollTrigger: {
-  trigger: "#arrow3",
+  trigger: ".arrow3",
   scrub:0,
-  markers: true,
+  //markers: true,
   start: "100px bottom",
   end: "bottom bottom", // new
 }})
@@ -160,7 +161,7 @@ scrollTrigger: {
 
 var action4 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
 scrollTrigger: {
-  trigger: "#arrow4",
+  trigger: ".arrow4",
   scrub:0,
 //  markers: true,
   start: "40% bottom",
