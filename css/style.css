@@ -845,32 +845,25 @@ section {
     position: sticky;
   }
 
-  .tablet, .mobile {
+  .mobile {
     display: none;
   }
   .desktop {
-    display: block;
+
   }
 
   @media screen and (min-width:600px) and (max-width:1399px) {
-    .desktop {
-      display: none !important;
-    }
-    .mobile {
-      display: none !important;
-    }
-    .tablet {
-      display: block !important;
-    }
+   .infograficaPasta {
+     width: 100% !important;
+     padding: 1rem 0;
+   }
   }
 
   @media screen and (max-width:599px) {
     .desktop {
       display: none !important;
     }
-    .tablet {
-      display: none !important;
-    }
+
     .mobile {
       display: block !important;
     }
