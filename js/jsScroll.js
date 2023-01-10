@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function(event){
    const marginTop =  -(infograficaPosition - 200);
    const ricicloRedId = document.getElementById('ricicloRed');
    window.innerWidth < 968 ? '' :  ricicloRedId.style.bottom = '15vh';
-   ricicloRedId.style.marginTop = window.innerWidth < 600 ? 0 : marginTop;
+   //ricicloRedId.style.marginTop = window.innerWidth < 600 ? 0 : marginTop;
+   ricicloRedId.style.marginTop =  marginTop;
   
   const translateY = marginTop - 100;
   const tmp = window.innerHeight + translateY; 
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         ease: "ease"
       })
       .to("#infografica", {
-        scale: window.innerWidth < 600 ? 2.8 : 1,
+        scale: 1,
         y: -infograficaPosition + 100,
         duration: 2000,
         ease: "ease"

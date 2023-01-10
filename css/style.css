@@ -203,6 +203,7 @@ footer .innerContainer {
     margin-top: 0;
     transform-origin: top center;
     width: 100%;
+    transform: scale(3);
 }
 /* .infograficaPasta::after {
     content: '';
@@ -848,26 +849,36 @@ section {
   .mobile {
     display: none;
   }
-  .desktop {
+ 
 
-  }
-
-  @media screen and (min-width:600px) and (max-width:1399px) {
-   .infograficaPasta {
-     width: 100% !important;
-     padding: 1rem 0;
+   @media screen and  (max-width:1399px) {
+    #animation {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+     }
+     .infograficaPasta {
+      width: 100% !important;
+      padding: 1rem 0;
+    }
    }
-  }
+
 
   @media screen and (max-width:599px) {
-    .desktop {
-      display: none !important;
-    }
+   .infograficaPasta {
+     transform: scale(1.7);
+   }
+   #animation {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+   }
+   .desktop {
+    display: none !important;
+  }
 
-    .mobile {
-      display: block !important;
-    }
-  } 
+  .mobile {
+    display: block !important;
+  }
+  }
 
 
 
