@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event){
   const translateY = marginTop - 100;
   const tmp = window.innerHeight + translateY; 
 
-    gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin);
+    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
     gsap.defaults({
       ease: "none",
       duration: 1.5
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         duration: 2000,
         ease: "ease"
       })
-      .fromTo(".patharrowLine1", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"})    
+     // .fromTo(".patharrowLine1", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"})    
     ScrollTrigger.create({
        onUpdate: ({progress}) => aboutTl.progress() < progress ? aboutTl.progress(progress) : null,
       // onUpdate: self => console.log("progress:", self.progress),
