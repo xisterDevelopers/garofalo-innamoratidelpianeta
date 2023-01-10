@@ -883,10 +883,9 @@ section {
 
 
   .arrow {
-    /* opacity: 0.5 !important; */
+    stroke-dasharray: 100% !important;
+    stroke-dashoffset: 100%;
   }
-
-
 
 
   section {
