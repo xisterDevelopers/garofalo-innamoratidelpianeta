@@ -8,12 +8,14 @@ document.addEventListener("DOMContentLoaded", function(event){
 
    const marginTop =  -(infograficaPosition - 200);
    const ricicloRedId = document.getElementById('ricicloRed');
-   window.innerWidth < 968 ? '' :  ricicloRedId.style.bottom = '15vh';
+   const ricicloRedHeight = ricicloRedId.offsetHeight;
+   const windowHeightPerCent = window.innerHeight * 15 / 100;
+  window.innerWidth > 989 ? ( (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? ricicloRedId.style.bottom = '0vh' :  ricicloRedId.style.bottom = '15vh') : '';
    //ricicloRedId.style.marginTop = window.innerWidth < 600 ? 0 : marginTop;
    ricicloRedId.style.marginTop =  marginTop;
-  
-  const translateY = marginTop - 100;
-  const tmp = window.innerHeight + translateY; 
+
+  const tmp = (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? (window.innerHeight - (ricicloRedHeight + (marginTop * (3/2))) ) : window.innerHeight * (100-15) / 100 - (ricicloRedHeight + (marginTop * (3/2))); 
+
 
     gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
     gsap.defaults({
@@ -75,11 +77,12 @@ document.addEventListener("DOMContentLoaded", function(event){
       animation: secondTl,
      trigger: "#animation",
      start: `bottom ${tmp}px`, 
-     end: `bottom 45%`,
-    // markers: true,
+    // start: window.innerWidth < 600 ?  `bottom ${tmpM}px` : `bottom bottom`, 
+     end: `bottom ${tmp - ricicloRedHeight / 4}px`,
+     //markers: true,
      id: "#animation",
      scrub: true,
-   //  pin: true,
+     //pin: true,
      
      //once: true,
        

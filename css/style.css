@@ -887,3 +887,12 @@ section {
   }
 
 
+
+
+  section {
+    margin-top: 3rem;
+  }
+
+  .firstSection {
+    margin-top: 0rem;
+  }
