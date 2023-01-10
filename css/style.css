@@ -60,7 +60,7 @@ footer .innerContainer {
       display: flex;
     }
     .headerContainer .logo {
-        padding: 0rem 0;
+        position: absolute;
     }
   }
 
