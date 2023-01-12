@@ -573,11 +573,27 @@ footer .innerContainer {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 14px;
     text-transform: uppercase;
-    background: url("../assets/svg/Vector\ button.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
     margin: auto;
     text-decoration: none;
+
+}
+
+.buttonRed a {
+  background: url("../assets/svg/Vector\ button.svg");
+  color: #FFFFFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.buttonWhite a {
+  background: url("../assets/svg/buttonWhite.svg");
+  color: #E01F26;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+.buttonWhite {
+ margin: 2rem auto 0;
 }
 
 /* line */
@@ -861,7 +877,7 @@ section {
     }
 
     .card .absolute {
-       /* top: 270px;  */
+       top: 270px; 
       padding-left: 50px;
     }
     .responsiveB, .responsiveSmallB {
@@ -879,7 +895,7 @@ section {
       width:auto;
     }
     .swiper {
-      padding-bottom: 200px;
+      padding-bottom: 300px;
       padding-right: 10px;
     }
     .card {
