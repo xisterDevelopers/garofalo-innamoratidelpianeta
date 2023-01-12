@@ -16,7 +16,7 @@ const ready = (selector, callback) => {
 
 // ------------------------------------------------------------------- BURGER MENU DROP DOWN --------------------------------------------------------------------------------------
 function collapse () {
-  var breakpointMobile = 768;
+  var breakpointMobile = 1000;
   var header = document.getElementById("header");
   var collapsedList = document.getElementById("collapsedList");
   var collapse = document.getElementById("burger");
@@ -36,13 +36,29 @@ function collapse () {
 }
 
 // ------------------------------------------------------------------- SCROLL ANCORE MENU' --------------------------------------------------------------------------------------
-function scrollAncora (id) {
-  collapse();
-  window.scroll({
-    top: document.getElementById(id)?.getBoundingClientRect().top + window.scrollY - 100,
-    behavior: 'smooth'
-  });
+function scrollAncoraFN (id, bool) {
+  if(bool) {
+  window.location.replace('/innamorati_del_pianeta')
+  setTimeout(() => {
+    scrollAncora(id);
+    console.log('sine')
+  }, 5000)
+  }
+  if(!bool) {
+   scrollAncora(id)
+  }
+
 }
+
+function scrollAncora (id) {
+  console.log('si')
+    collapse();
+    window.scroll({
+      top: document.getElementById(id)?.getBoundingClientRect().top + window.scrollY - 100,
+      behavior: 'smooth'
+    });
+}
+
 
 // -------------------------------------------------------------------- READY --------------------------------------------------------------------------------------
 
