@@ -91,29 +91,6 @@ document.addEventListener("DOMContentLoaded", function(event){
      }
    });
 
-  //desktop
-
-      //  var action1 = gsap
-      //  .timeline({
-      //   defaults: {
-      //     duration: 2000, 
-      //     ease:'ease' 
-      //   },
-
-      //  scrollTrigger: {
-      //    trigger: ".desktop",
-      //    scrub:true,
-      //    //markers: true,
-      //    start: `top ${-infograficaPosition + 100}`,
-      //    end: `top ${-infograficaPosition - 300}`, // new
-      //  }
-      // })
-      //  .to(".arrow1D", {
-      //   strokeDashoffset: 0,
-      //   duration: 8000,
-      //   ease: "ease",     
-      // })
-
         aboutTl.eventCallback("onComplete", function() {
 
           var action1 = gsap
@@ -231,105 +208,22 @@ document.addEventListener("DOMContentLoaded", function(event){
     strokeDashoffset: 0,
     duration: 8000,
     ease: "ease"        
+    })
+  });
+
+
+    var action1M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
+    scrollTrigger: {
+      trigger: ".ricicloGrey",
+      scrub:true,
+     // markers: true,
+     start: "bottom 60%",
+      end: "bottom top", // new
+   }})
+   .to("#down", {
+    opacity: 1,
+    duration: 2000,
+    ease: "ease"        
   })
 
-        });
-
-        
-
-      //action1.delay(aboutTl.duration()); 
-  //     var action2 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-  //     scrollTrigger: {
-  //       trigger: ".arrow2D",
-  //       scrub:true,
-  //       //markers: true,
-  //       start: "top bottom",
-  //       end: "bottom top", // new
-  //     }})
-  //     .to(".arrow2D", {
-  //      strokeDashoffset: 0,
-  //      duration: 5000,
-  //      ease: "ease"        
-  //    })
-  //    var action3 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-  //    scrollTrigger: {
-  //      trigger: ".arrow3D",
-  //      scrub:true,
-  //      //markers: true,
-  //      start: "top bottom",
-  //      end: "bottom top", // new
-  //    }})
-  //    .to(".arrow3D", {
-  //     strokeDashoffset: 0,
-  //     duration: 5000,
-  //     ease: "ease"        
-  //   })
-  //   var action4 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-  //   scrollTrigger: {
-  //     trigger: ".arrow4D",
-  //     scrub:true,
-  //     //markers: true,
-  //     start: "top bottom",
-  //     end: "bottom top", // new
-  //   }})
-  //   .to(".arrow4D", {
-  //    strokeDashoffset: 0,
-  //    duration: 5000,
-  //    ease: "ease"        
-  //  })
-
-
-   //mobile 
-//    var action1M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-//    scrollTrigger: {
-//      trigger: ".arrow1M",
-//      scrub:true,
-//      //markers: true,
-//      start: "top bottom",
-//      end: "bottom top", // new
-//    }})
-//    .to(".arrow1M", {
-//     strokeDashoffset: 0,
-//     duration: 5000,
-//     ease: "ease"        
-//   })
-//   var action2M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-//   scrollTrigger: {
-//     trigger: ".arrow2M",
-//     scrub:true,
-//     //markers: true,
-//     start: "top bottom",
-//     end: "bottom top", // new
-//   }})
-//   .to(".arrow2M", {
-//    strokeDashoffset: 0,
-//    duration: 5000,
-//    ease: "ease"        
-//  })
-//  var action3M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-//  scrollTrigger: {
-//    trigger: ".arrow3M",
-//    scrub:true,
-//    //markers: true,
-//    start: "top bottom",
-//    end: "bottom top", // new
-//  }})
-//  .to(".arrow3M", {
-//   strokeDashoffset: 0,
-//   duration: 5000,
-//   ease: "ease"        
-// })
-// var action4 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-// scrollTrigger: {
-//   trigger: ".arrow4M",
-//   scrub:true,
-//   //markers: true,
-//   start: "top bottom",
-//   end: "bottom top", // new
-// }})
-// .to(".arrow4M", {
-//  strokeDashoffset: 0,
-//  duration: 5000,
-//  ease: "ease"        
-// })
 });

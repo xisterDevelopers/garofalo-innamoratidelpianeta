@@ -36,22 +36,8 @@ function collapse () {
 }
 
 // ------------------------------------------------------------------- SCROLL ANCORE MENU' --------------------------------------------------------------------------------------
-function scrollAncoraFN (id, bool) {
-  if(bool) {
-  window.location.replace('/innamorati_del_pianeta')
-  setTimeout(() => {
-    scrollAncora(id);
-    console.log('sine')
-  }, 5000)
-  }
-  if(!bool) {
-   scrollAncora(id)
-  }
-
-}
 
 function scrollAncora (id) {
-  console.log('si')
     collapse();
     window.scroll({
       top: document.getElementById(id)?.getBoundingClientRect().top + window.scrollY - 100,
@@ -59,6 +45,12 @@ function scrollAncora (id) {
     });
 }
 
+function scrollUP () {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
 
 // -------------------------------------------------------------------- READY --------------------------------------------------------------------------------------
 
