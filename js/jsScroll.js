@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function(event){
           }
          })
           .to(".arrow1D", {
-           strokeDashoffset: 0,
+           strokeDashoffset: 80,
            duration: 8000,
            ease: "ease",     
          })
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function(event){
          }
         })
          .to(".arrow1M", {
-          strokeDashoffset: 0,
+          strokeDashoffset: 80,
           duration: 8000,
           ease: "ease",     
         })
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         start: "-100px 60%",
       }})
       .to(".arrow2D", {
-       strokeDashoffset: 0,
+       strokeDashoffset: 80,
        duration: 8000,
        ease: "ease"        
      })
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function(event){
        start: "-100px 60%",
      }})
      .to(".arrow2M", {
-      strokeDashoffset: 0,
+      strokeDashoffset: 80,
       duration: 8000,
       ease: "ease"        
     })
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function(event){
        start: "top 60%",
      }})
      .to(".arrow3D", {
-      strokeDashoffset: 0,
+      strokeDashoffset: 80,
       duration: 8000,
       ease: "ease"        
     })
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       start: "top 60%",
     }})
     .to(".arrow3M", {
-     strokeDashoffset: 0,
+     strokeDashoffset: 80,
      duration: 8000,
      ease: "ease"        
    })
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       start: "top 60%",
     }})
     .to(".arrow4D", {
-     strokeDashoffset: 0,
+     strokeDashoffset: 80,
      duration: 8000,
      ease: "ease"        
    })
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function(event){
      start: "top 60%",
    }})
    .to(".arrow4M", {
-    strokeDashoffset: 0,
+    strokeDashoffset: 80,
     duration: 8000,
     ease: "ease"        
     })
