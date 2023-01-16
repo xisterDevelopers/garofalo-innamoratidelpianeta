@@ -61,7 +61,7 @@ footer .innerContainer {
 .headerContainer .list {
     display: none;
     width: calc(100% - 147px - 8rem);
-    max-width: 1400px;
+    max-width: 1000px;
     gap: 2rem;
     justify-content: space-between;
 
@@ -773,7 +773,7 @@ section {
 
 
 
-  /* carousel  */
+  /* swiper  */
   .active {
     scroll-snap-type: none;
   }
@@ -836,7 +836,7 @@ section {
     position: relative;
   }
 
-  /*  swiper */ 
+ 
   .swiper-wrapper {
     height: auto;
     width: auto;
@@ -994,3 +994,126 @@ section {
   .firstSection {
     margin-top: 0rem;
   }
+
+
+
+
+  /* progetto indonesia */
+
+  .progettoIndonesia .hero img {
+    width: 100%;
+  }
+  .progettoIndonesia .hero .brandon {
+    color: white;
+    position: absolute;
+    text-align: center;
+    height: fit-content;
+    margin: auto;
+    bottom: 50%;
+    top: 50%;
+  }
+  .progettoIndonesia .leftD {
+    max-width: 1400px;
+    width: calc(100% - 4rem);
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .progettoIndonesia .flex .brandon {
+    margin-top: 0;
+  }
+  .progettoIndonesia .flex .nunito {
+    margin-top: 1rem;
+  }
+  .progettoIndonesia .flex .text {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .progettoIndonesia .text {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .progettoIndonesia .flex {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: calc(100% - 4rem);
+    margin: auto;
+    max-width: 1400px;
+    align-items: center;
+  }
+  .progettoIndonesia .flex img {
+   width: 100%;
+  }
+  .progettoIndonesia .subtitle {
+    font-weight: 700;
+    font-size: 26px;
+  }
+  .progettoIndonesia .nunito {
+    line-height: 32px;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .progettoIndonesia .subtitle {
+      font-size: 24px !important;
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+
+    .progettoIndonesia .flex {
+      display: block;
+    }
+    .progettoIndonesia .flex .text { 
+      padding-top: 2rem;
+    }
+    .progettoIndonesia .flex .leftD { 
+      padding-left: 0rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+
+    /*  swiper indonesia */ 
+    .progettoIndonesia .swiper-wrapper {
+      height: auto;
+      width: auto;
+      padding-bottom: 5rem;
+    }
+    .progettoIndonesia .swiper-slide {
+      width: auto;
+    }
+    .progettoIndonesia .swiper {
+      max-width: 100%;
+      /* max-width: 1500px; */
+      margin-left: 2rem;
+    }
+    .progettoIndonesia  .card .background {
+      max-width: 536px !important;
+    }
+  
+    @media screen and (max-width:992px)  {
+      .progettoIndonesia  .swiper {
+        padding-bottom: 0px;
+        padding-right: 60px;
+      }
+
+    }
+    @media screen and (max-width:670px)  {
+
+      .progettoIndonesia  .card .background {
+        display: block;
+        max-width: 536px;
+      }
+
+      .progettoIndonesia  .swiper {
+        padding-right: 10px;
+      }
+      .progettoIndonesia  .card {
+        margin-left: 0;
+      }
+
+    }
+  
