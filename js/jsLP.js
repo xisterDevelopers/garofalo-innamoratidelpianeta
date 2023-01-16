@@ -52,15 +52,6 @@ function scrollUP () {
   });
 }
 
-function prova () {
-  // window.scrollTo({
-  //   top: 0,
-  //   behavior: 'smooth'
-  // });
-  console.log('ora')
-}
-
-
 // -------------------------------------------------------------------- READY --------------------------------------------------------------------------------------
 
 ready('.counter', (stat) => {
@@ -127,9 +118,8 @@ ready('.counter', (stat) => {
 });
 
 window.addEventListener('DOMContentLoaded', (event) => {
-
+   event.preventDefault();
     // -------------------------------------------------------------------- CLICK FUORI DROP DOWN  --------------------------------------------------------------------------------------
-
     function handleClickOutside (event) {
       var header = document.getElementById("header");
     if(!header.contains(event.target)) {
