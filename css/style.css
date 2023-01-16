@@ -996,8 +996,32 @@ section {
   }
 
 
+  /* tips */
 
+  .tips {
+    padding-bottom: 5rem;
+  }
 
+  .tips .leftD {
+    max-width: 1400px;
+    width: calc(100% - 4rem);
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .tips .subtitle {
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 0.3rem;
+  }
+
+  .tips .nunito {
+    line-height: 32px;
+  }
+
+  .tips a {
+    cursor: pointer;
+  }
   /* progetto indonesia */
 
   .progettoIndonesia .hero img {
@@ -1048,6 +1072,7 @@ section {
   .progettoIndonesia .subtitle {
     font-weight: 700;
     font-size: 26px;
+    margin-bottom: 0.3rem;
   }
   .progettoIndonesia .nunito {
     line-height: 32px;
