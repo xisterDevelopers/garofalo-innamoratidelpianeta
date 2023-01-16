@@ -42,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function(event){
         duration: 2000,
         ease: "ease"
       })
+      .to(".arrow1", {
+        strokeDashoffset: 80,
+        duration: 2000,
+        ease: "ease",     
+      })
    
     ScrollTrigger.create({
        onUpdate: ({progress}) => aboutTl.progress() < progress ? aboutTl.progress(progress) : null,
@@ -86,44 +91,44 @@ document.addEventListener("DOMContentLoaded", function(event){
 
         aboutTl.eventCallback("onComplete", function() {
 
-          var action1 = gsap
-          .timeline({
-           defaults: {
-             duration: 2000, 
-             ease:'ease' 
-           },
-          scrollTrigger: {
-            trigger: ".arrow1D",
-            scrub:true,
-            //markers: true,
-            start: "top 300px",
-          }
-         })
-          .to(".arrow1D", {
-           strokeDashoffset: 80,
-           duration: 8000,
-           ease: "ease",     
-         })
+        //   var action1 = gsap
+        //   .timeline({
+        //    defaults: {
+        //      duration: 2000, 
+        //      ease:'ease' 
+        //    },
+        //   scrollTrigger: {
+        //     trigger: ".arrow1D",
+        //     scrub:true,
+        //     //markers: true,
+        //     start: `top ${-infograficaPosition + 100}px`,
+        //   }
+        //  })
+        //   .to(".arrow1D", {
+        //    strokeDashoffset: 80,
+        //    duration: 8000,
+        //    ease: "ease",     
+        //  })
 
 
-         var action1M = gsap
-         .timeline({
-          defaults: {
-            duration: 2000, 
-            ease:'ease' 
-          },
-         scrollTrigger: {
-           trigger: ".arrow1M",
-           scrub:true,
-           //markers: true,
-           start: "100px 300px",
-         }
-        })
-         .to(".arrow1M", {
-          strokeDashoffset: 80,
-          duration: 8000,
-          ease: "ease",     
-        })
+        //  var action1M = gsap
+        //  .timeline({
+        //   defaults: {
+        //     duration: 2000, 
+        //     ease:'ease' 
+        //   },
+        //  scrollTrigger: {
+        //    trigger: ".arrow1M",
+        //    scrub:true,
+        //    //markers: true,
+        //    start: "100px 300px",
+        //  }
+        // })
+        //  .to(".arrow1M", {
+        //   strokeDashoffset: 80,
+        //   duration: 8000,
+        //   ease: "ease",     
+        // })
 
         var action2 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
       scrollTrigger: {
