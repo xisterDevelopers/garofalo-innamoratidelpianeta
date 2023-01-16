@@ -10,8 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event){
    const ricicloRedId = document.getElementById('ricicloRed');
    const ricicloRedHeight = ricicloRedId.offsetHeight;
    const windowHeightPerCent = window.innerHeight * 15 / 100;
-  window.innerWidth > 989 ? ( (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? ricicloRedId.style.bottom = '0vh' :  ricicloRedId.style.bottom = '15vh') : '';
-   //ricicloRedId.style.marginTop = window.innerWidth < 600 ? 0 : marginTop;
+   window.innerWidth > 989 ? ( (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? ricicloRedId.style.bottom = '0vh' :  ricicloRedId.style.bottom = '15vh') : '';
    ricicloRedId.style.marginTop =  marginTop;
 
   const tmp = (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? (window.innerHeight - (ricicloRedHeight + (marginTop * (3/2))) ) : window.innerHeight * (100-15) / 100 - (ricicloRedHeight + (marginTop * (3/2))); 
@@ -73,20 +72,14 @@ document.addEventListener("DOMContentLoaded", function(event){
     })
     ScrollTrigger.create({
       onUpdate: ({progress}) => secondTl.progress() < progress ? secondTl.progress(progress) : null,
-      animation: secondTl,
+     animation: secondTl,
      trigger: "#animation",
-     start: `bottom ${tmp}px`, 
-    // start: window.innerWidth < 600 ?  `bottom ${tmpM}px` : `bottom bottom`, 
+     start: `bottom ${tmp}px`,  
      end: `bottom ${tmp - ricicloRedHeight / 4}px`,
-     ////markers: true,
      id: "#animation",
      scrub: true,
-     //pin: true,
-     
-     //once: true,
        
      onLeave: function(self) {
-       //self.disable()
        self.animation.progress(1)
      }
    });
