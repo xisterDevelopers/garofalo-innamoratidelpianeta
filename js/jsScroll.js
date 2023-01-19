@@ -88,11 +88,12 @@ document.addEventListener("DOMContentLoaded", function(event){
       onUpdate: ({progress}) => secondTl.progress() < progress ? secondTl.progress(progress) : null,
      animation: secondTl,
      trigger: "#animation",
-      start: window.innerWidth > 989 ? `bottom ${tmp}px` : 'bottom bottom',
+      // start: window.innerWidth > 989 ? `bottom ${tmp}px` : 'bottom bottom',
+      start: 'bottom bottom',
      end: `bottom ${tmp - ricicloRedHeight / 4}px`,
      id: "#animation",
      scrub: true,
-     markers: true,
+     //markers: true,
        
      onLeave: function(self) {
        self.animation.progress(1)

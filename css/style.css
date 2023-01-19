@@ -1081,3 +1081,11 @@ section {
       }
 
     }
+
+    #animation {
+      z-index: 1;
+    }
+
+    #ricicloRed {
+      z-index: 0;
+    }
