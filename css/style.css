@@ -182,10 +182,6 @@ footer .innerContainer {
     line-height: 30px;
 }
 
-.leftD {
-  text-align: left !important;
-}
-
 .ref {
   font-size: 12px;
 }
@@ -942,13 +938,34 @@ section {
     padding-bottom: 5rem;
   }
 
-  .tips .leftD {
+  .tips .contentWidth {
     max-width: 1400px;
     width: calc(100% - 4rem);
     padding-left: 2rem;
     padding-right: 2rem;
+    text-align: left !important;
   }
 
+  .tips .grid {
+    margin: auto;
+    max-width: 1400px;
+    width: calc(100% - 4rem);
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 4%;
+  }
+     .tips .grid .text, .tips .grid .contentWidth  {
+      width: 100%;
+      padding-left: 0rem;
+      padding-right: 0rem;
+    } 
+
+    .tips .image4season {
+      margin: 2rem auto;
+    }
   .tips .subtitle {
     font-weight: 700;
     font-size: 26px;
@@ -961,6 +978,41 @@ section {
 
   .tips a {
     cursor: pointer;
+  }
+
+  .tips .smallB {
+    top: 9px;
+    position: relative;
+  }
+
+  .tips .flex {
+    display: flex;
+    gap: 4%;
+  }
+  .tips .flex img {
+   width: 100%;
+   max-width: 110px;
+  }
+  .tips .flex .tipsImage {
+    max-width: 360px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .tips .grid {
+      display: block;
+    }
+    .tips .flex .tipsImage {
+      margin: auto;
+    }
+    .tips .first .text .brandon {
+      margin-top: 0;
+    }
+  }
+
+  .tips .first {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4rem;
   }
   /* progetto indonesia */
 
@@ -976,17 +1028,19 @@ section {
     bottom: 50%;
     top: 50%;
   }
-  .progettoIndonesia .leftD {
+  .progettoIndonesia .contentWidth {
     max-width: 1400px;
     width: calc(100% - 4rem);
     padding-left: 2rem;
     padding-right: 2rem;
+    text-align: left !important;
   }
   .progettoIndonesia .flex .brandon {
     margin-top: 0;
   }
   .progettoIndonesia .flex .nunito {
     margin-top: 1rem;
+    text-align: left;
   }
   .progettoIndonesia .flex .text {
     margin-top: auto;
@@ -1000,14 +1054,31 @@ section {
   }
   .progettoIndonesia .flex {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 43% 52%;
     width: calc(100% - 4rem);
     margin: auto;
     max-width: 1400px;
     align-items: center;
+    gap: 5%;
   }
   .progettoIndonesia .flex img {
    width: 100%;
+  }
+
+  .progettoIndonesia .full {
+    grid-template-columns: auto !important;
+    gap:0;
+    margin-bottom: 1rem;
+  }
+
+  .progettoIndonesia .full .nunito{
+    max-width: 1400px;
+  }
+  .progettoIndonesia .order .flex {
+    grid-template-columns: 52% 43%;
+  }
+  .progettoIndonesia .order img {
+    order: 1;
   }
   .progettoIndonesia .subtitle {
     font-weight: 700;
@@ -1033,7 +1104,7 @@ section {
     .progettoIndonesia .flex .text { 
       padding-top: 2rem;
     }
-    .progettoIndonesia .flex .leftD { 
+    .progettoIndonesia .flex .contentWidth { 
       padding-left: 0rem;
       margin-left: 0;
       margin-right: 0;
