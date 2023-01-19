@@ -16,11 +16,12 @@ document.addEventListener("DOMContentLoaded", function(event){
    const ricicloRedId = document.getElementById('ricicloRed');
    const ricicloRedHeight = ricicloRedId.offsetHeight;
    const windowHeightPerCent = window.innerHeight * 15 / 100;
+
    window.innerWidth > 989 ? ( (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? ricicloRedId.style.bottom = '0vh' :  ricicloRedId.style.bottom = '15vh') : '';
    ricicloRedId.style.marginTop =     window.innerWidth > 989 ? marginTop : '60';
 
-  let height = infograficaHeight + 50;
-  window.innerWidth > 989 ?  '' : animationId.style.height =  height;
+   let height = infograficaHeight + 50;
+   window.innerWidth > 989 ?  '' : animationId.style.height =  height;
 
   const tmp = (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? (window.innerHeight - (ricicloRedHeight + (marginTop * (3/2))) ) : window.innerHeight * (100-15) / 100 - (ricicloRedHeight + (marginTop * (3/2))); 
 
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     .to("#ricicloRed", {
       opacity: 1,
       duration: 1000,
-      ease: "ease"
+      ease: "ease-in"
     })
     ScrollTrigger.create({
       onUpdate: ({progress}) => secondTl.progress() < progress ? secondTl.progress(progress) : null,
