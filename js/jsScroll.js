@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", function(event){
         ease: "ease"
       })
       .to(".arrow1", {
-        strokeDashoffset: 80,
-        duration: 2000,
-        ease: "ease",     
+        strokeDashoffset: 90,
+        duration: 500,
+        ease: "ease",
       })
    
     ScrollTrigger.create({
@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       end: "bottom bottom",
       scrub: true,
       pin: true,
+      markers: true ,    
       id: "#about",
       
       //once: true,
