@@ -3,15 +3,24 @@ document.addEventListener("DOMContentLoaded", function(event){
 
   const infograficaId = document.getElementById('infografica');
   const infograficaPosition = infograficaId.offsetTop;
+  const infograficaHeight = infograficaId.offsetHeight;
 
 
+  const impegnoId = document.getElementById('impegno');
+  const impegnoHeight = impegnoId.offsetHeight;
+
+
+  const animationId = document.getElementById('animation');
 
    const marginTop =  -(infograficaPosition - 200);
    const ricicloRedId = document.getElementById('ricicloRed');
    const ricicloRedHeight = ricicloRedId.offsetHeight;
    const windowHeightPerCent = window.innerHeight * 15 / 100;
    window.innerWidth > 989 ? ( (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? ricicloRedId.style.bottom = '0vh' :  ricicloRedId.style.bottom = '15vh') : '';
-   ricicloRedId.style.marginTop =  marginTop;
+   ricicloRedId.style.marginTop =     window.innerWidth > 989 ? marginTop : '60';
+
+  let height = infograficaHeight + 50;
+  window.innerWidth > 989 ?  '' : animationId.style.height =  height;
 
   const tmp = (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? (window.innerHeight - (ricicloRedHeight + (marginTop * (3/2))) ) : window.innerHeight * (100-15) / 100 - (ricicloRedHeight + (marginTop * (3/2))); 
 
@@ -79,10 +88,11 @@ document.addEventListener("DOMContentLoaded", function(event){
       onUpdate: ({progress}) => secondTl.progress() < progress ? secondTl.progress(progress) : null,
      animation: secondTl,
      trigger: "#animation",
-     start: `bottom ${tmp}px`,  
+      start: window.innerWidth > 989 ? `bottom ${tmp}px` : 'bottom bottom',
      end: `bottom ${tmp - ricicloRedHeight / 4}px`,
      id: "#animation",
      scrub: true,
+     markers: true,
        
      onLeave: function(self) {
        self.animation.progress(1)
