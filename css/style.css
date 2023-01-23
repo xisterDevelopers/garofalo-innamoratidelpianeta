@@ -867,6 +867,11 @@ section {
   }
 
   
+
+
+  .leftAlways {
+    text-align: left !important;
+  }
   /* scroll trigger */
 
   #animation {
@@ -966,6 +971,10 @@ section {
     .tips .image4season {
       margin: 2rem auto;
     }
+    .tips .image4season img {
+      width: 100%;
+      max-width: 420px;
+    }
   .tips .subtitle {
     font-weight: 700;
     font-size: 26px;
@@ -993,6 +1002,11 @@ section {
    width: 100%;
    max-width: 110px;
   }
+  .tips .season img  {
+    height: fit-content;
+    padding-top: 3.375rem;
+    margin-top: 2.26rem;
+  }
   .tips .flex .tipsImage {
     max-width: 360px;
   }
@@ -1004,9 +1018,28 @@ section {
     .tips .flex .tipsImage {
       margin: auto;
     }
+    .tips .season {
+      flex-direction: row;
+    }
+    .tips .season img  {
+      max-width: 60px;
+      padding-top: 0.5rem;
+      margin-top: 0;
+    }
+    .tips .season .text .nunito {
+      margin-top: 0;
+    }
+    .tips .season .text  {
+      padding-top: 0.5rem;
+    }
     .tips .first .text .brandon {
       margin-top: 0;
     }
+
+     .tips .text {
+      padding-left: 0rem;
+      padding-right: 0rem;
+    } 
   }
 
   .tips .first {
@@ -1041,6 +1074,7 @@ section {
   .progettoIndonesia .flex .nunito {
     margin-top: 1rem;
     text-align: left;
+    max-width: 1400px;
   }
   .progettoIndonesia .flex .text {
     margin-top: auto;
@@ -1051,6 +1085,8 @@ section {
   .progettoIndonesia .text {
     margin-top: 0;
     padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   .progettoIndonesia .flex {
     display: grid;
@@ -1089,6 +1125,13 @@ section {
     line-height: 32px;
   }
 
+  .progettoIndonesia .small {
+    display: none;
+   }
+   .progettoIndonesia .big {
+     display: block;
+   }
+
   @media screen and (max-width: 600px) {
 
     .progettoIndonesia .subtitle {
@@ -1108,6 +1151,12 @@ section {
       padding-left: 0rem;
       margin-left: 0;
       margin-right: 0;
+    }
+    .progettoIndonesia .small {
+     display: block;
+    }
+    .progettoIndonesia .big {
+      display: none;
     }
   }
 
