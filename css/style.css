@@ -1052,6 +1052,14 @@ section {
   .progettoIndonesia .hero img {
     width: 100%;
   }
+
+  .progettoIndonesia .logoRimbaRaya {
+    margin: 3rem auto auto auto;
+  }
+  .progettoIndonesia .logoRimbaRaya img {
+    width: 100%;
+    max-width: 322px;
+  }
   .progettoIndonesia .hero .brandon {
     color: white;
     position: absolute;

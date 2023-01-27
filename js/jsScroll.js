@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       end: "bottom bottom",
       scrub: true,
       pin: true,
-      markers: true ,    
+     // markers: true ,    
       id: "#about",
       
       //once: true,
