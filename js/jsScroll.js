@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     scrollTrigger: {
       trigger: ".footer",
       scrub:true,
-      markers: true,
+     // markers: true,
       start: "-1000 60%",
       end: "bottom bottom",
    }})
