@@ -14,6 +14,7 @@
   <!-- <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script> -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
    <script type="text/javascript" src="../js/jsLP.js"></script>
+ <script type="text/javascript" src="../js/jsScroll.js"></script> 
 </head>
   <body>
 
@@ -91,7 +92,7 @@
 
           <div class="grid">
             <div class="flex season">
-              <img alt="img" src="/assets/svg/primavera.svg"></img>
+              <img alt="img" src="/assets/img/primavera.png"></img>
               <div class="text">
                 <div class="nunito contentWidth">
                 <b>Primavera</b><br>
@@ -101,7 +102,7 @@
                </div>
 
          <div class="flex season">
-          <img alt="img" src="/assets/svg/estate.svg"></img>
+          <img alt="img" src="/assets/img/estate.png"></img>
           <div class="text">
             <div class="nunito contentWidth">
               <b>Estate</b><br>
@@ -111,7 +112,7 @@
         </div>
 
         <div class="flex season">
-          <img alt="img" src="/assets/svg/autunno.svg"></img>
+          <img alt="img" src="/assets/img/autunno.png"></img>
           <div class="text">
             <div class="nunito contentWidth">
               <b>Autunno</b><br>
@@ -121,7 +122,7 @@
         </div>
 
         <div class="flex season">
-          <img alt="img" src="/assets/svg/inverno.svg"></img>
+          <img alt="img" src="/assets/img/inverno.png"></img>
           <div class="text">
             <div class="nunito contentWidth">
               <b>Inverno</b><br>
@@ -138,19 +139,19 @@
      <div>
       <div class="text">
             <div class="titleImg contentWidth">
-              <div class="image"> <img alt="step2" src="../assets/svg/step2.svg"></img></div>
+              <div class="image"> <img alt="step2" src="../assets/img/step2.png"></img></div>
               <div class="brandon smallB contentWidth">Step 2</div>
             </div>
             <div class="nunito contentWidth">
               <span class="subtitle">Questione di pentole</span><br>
-                Anche la scelta delle pentole e delle padelle che utilizzi incide sui consumi energetici e quindi sulle emissioni di CO2. <b>L’alluminio</b> e il <b>rame</b> hanno un’alta capacità di conduzione del calore, dunque le pentole in questi materiali consentono di <b>cuocere i cibi più rapidamente</b> con un buon <b>risparmio di energia.</b>
+                Anche la scelta delle pentole e delle padelle che utilizzi incide sui consumi energetici e quindi sulle emissioni di CO<sub>2</sub>. <b>L’alluminio</b> e il <b>rame</b> hanno un’alta capacità di conduzione del calore, dunque le pentole in questi materiali consentono di <b>cuocere i cibi più rapidamente</b> con un buon <b>risparmio di energia.</b>
                  </div>
               </div>
       </div> 
      <div>
       <div class="text">
             <div class="titleImg contentWidth">
-              <div class="image"> <img alt="step3" src="../assets/svg/step3.svg"></img></div>
+              <div class="image"> <img alt="step3" src="../assets/img/step3.png"></img></div>
               <div class="brandon smallB contentWidth">Step 3</div>
             </div>
             <div class="nunito contentWidth">
@@ -164,7 +165,7 @@
      <div>
       <div class="text">
             <div class="titleImg contentWidth">
-              <div class="image"> <img alt="step4" src="../assets/svg/step4.svg"></img></div>
+              <div class="image"> <img alt="step4" src="../assets/img/step4.png"></img></div>
               <div class="brandon smallB contentWidth">Step 4</div>
             </div>
             <div class="nunito contentWidth">
@@ -180,7 +181,7 @@
      <div>
       <div class="text">
             <div class="titleImg contentWidth">
-              <div class="image"> <img alt="step5" src="../assets/svg/step5.svg"></img></div>
+              <div class="image"> <img alt="step5" src="../assets/img/step5.png"></img></div>
               <div class="brandon smallB contentWidth">Step 5</div>
             </div>
             <div class="nunito contentWidth">
@@ -192,17 +193,21 @@
        </div>
       </section>
 
+      <button class="downButton" onClick="scrollUP()">
+        <img alt="downSvg" src="../assets/svg/upDown.svg"></img>
+        </button>
+
      <section>
-      <div class="text">
+      <div class="text nogrid">
             <div class="titleImg contentWidth">
-              <div class="image"> <img alt="step6" src="../assets/svg/step6.svg"></img></div>
+              <div class="image"> <img alt="step6" src="../assets/img/step6.png"></img></div>
               <div class="brandon smallB contentWidth">Step 6</div>
             </div>
             <div class="nunito contentWidth">
               <span class="subtitle">Prova la cottura passiva</span><br>
               <b>La cottura della pasta a fuoco spento</b> è un mezzo <b>efficace per risparmiare energia.</b>
               Con questo metodo, però, non sempre la qualità del risultato finale è del tutto inalterata.
-            <b>Alcuni formati</b> di pasta <b>sono più adatti</b> di altri alla cottura passiva: abbiamo svolto uno studio ad hoc e ne parliamo nel nostro sito, <a href="https://www.pasta-garofalo.com/it/world/la-cottura-passiva-messa-alla-prova/" title="leggi qui" target="_self">leggi qui</a>.
+            <b>Alcuni formati</b> di pasta <b>sono più adatti</b> di altri alla cottura passiva: abbiamo svolto uno studio ad hoc e ne parliamo nel nostro sito, <a class="link" href="https://www.pasta-garofalo.com/it/world/la-cottura-passiva-messa-alla-prova/" title="leggi qui" target="_blank"><b>leggi qui</b></a>.
                  </div>
               </div>
      </section> 

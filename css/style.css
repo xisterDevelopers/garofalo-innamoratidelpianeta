@@ -15,6 +15,10 @@ body {
     font-weight: 400;
 }
 
+
+.link {
+  color: #0070D8;
+}
 .downButton {
   background-color: transparent;
   border: none;
@@ -22,10 +26,11 @@ body {
   top: 50%;
   cursor: pointer;
   z-index: 3;
-  right:38px;
+  right:0px;
+  padding: 0;
   left: auto;
-  transform-origin: right;
-  transform: rotate(-90deg);
+  /* transform-origin: right;
+  transform: rotate(-90deg); */
   opacity: 0;
 }
 .headerContainer, header, footer {
@@ -55,9 +60,10 @@ footer .innerContainer {
 }
 .headerContainer .logo img {
     width: 91px;
-    margin-left: 3.5rem;
+    margin-left: 1rem;
     height: -webkit-fill-available;
 }
+
 .headerContainer .list {
     display: none;
     width: calc(100% - 147px - 8rem);
@@ -81,6 +87,9 @@ footer .innerContainer {
      .headerContainer .list {
       display: flex;
     }
+    .headerContainer .logo img {
+      margin-left: 3rem;
+  }
   }
 
   .headerContainer a {
@@ -771,7 +780,6 @@ section {
     width: 90vw;
     position: relative;
   }
-
  
   .swiper-wrapper {
     height: auto;
@@ -967,6 +975,9 @@ section {
       padding-left: 0rem;
       padding-right: 0rem;
     } 
+    .tips .nogrid .smallB {
+      padding: 0 !important;
+    }
 
     .tips .image4season {
       margin: 2rem auto;
@@ -1185,6 +1196,7 @@ section {
     }
     .progettoIndonesia  .card .background {
       max-width: 536px !important;
+      width: 85vw;
     }
   
     @media screen and (max-width:992px)  {
