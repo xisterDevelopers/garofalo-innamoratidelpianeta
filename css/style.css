@@ -61,7 +61,7 @@ footer .innerContainer {
 .headerContainer .logo img {
     width: 91px;
     margin-left: 1rem;
-    height: -webkit-fill-available;
+    height: -webkit-fit-content;
 }
 
 .headerContainer .list {
@@ -530,7 +530,8 @@ footer .innerContainer {
       text-align: left !important;
     }
     .downButton {
-      transform: scale(0.5) rotate(-90deg);
+      /* transform: scale(0.5) rotate(-90deg); */
+      transform: scale(0.5);
     }
     .titleImg img {
       max-width: 90px;
@@ -991,7 +992,6 @@ section {
     font-size: 26px;
     margin-bottom: 0.3rem;
   }
-
   .tips .nunito {
     line-height: 32px;
   }
@@ -1013,7 +1013,7 @@ section {
    width: 100%;
    max-width: 110px;
   }
-  .tips .season img  {
+  .tips .season img  { 
     height: fit-content;
     padding-top: 3.375rem;
     margin-top: 2.26rem;
@@ -1022,9 +1022,17 @@ section {
     max-width: 360px;
   }
 
+  .tips .step {
+    position: relative;
+    left: -20px;
+  }
+
   @media screen and (max-width: 989px) {
     .tips .grid {
       display: block;
+    }
+    .tips .season img  {
+      height: min-intrinsic;
     }
     .tips .flex .tipsImage {
       margin: auto;
