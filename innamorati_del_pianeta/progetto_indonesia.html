@@ -11,6 +11,10 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gsap/dist/gsap.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
+
+
+
    <script type="text/javascript" src="../js/jsLP.js"></script>
    <script type="text/javascript" src="../js/jsScroll.js"></script> 
 </head>
@@ -253,12 +257,6 @@
        </div>
     </section> 
 
-
-    <button class="downButton" onClick="scrollUP()">
-      <img alt="downSvg" src="../assets/svg/upDown.svg"></img>
-      </button>
-
-
     <section style="opacity: 0;">
       <div class="text">
         <div class="brandon smallB contentWidth">Galleria fotografica</div>
@@ -329,9 +327,53 @@
 
   </div> 
       <!--fine body -->
+
+
+    <button class="downButton" onClick="scrollUP()">
+      <img alt="downSvg" src="../assets/svg/upDown.svg"></img>
+      </button>
+
       <!--footer -->
-    <footer class="footer">
-      <div class="innerContainer">FOOTER</div>
+      <footer class="footer" id="footer">
+ 
+        <div class="footerContainer">
+          <div class="logo">
+          <a title="logo" href="/innamorati_del_pianeta.html">
+            <img alt="logo" src="../assets/svg/logo-Garofalo.svg"></img>
+           </a>
+          </div>
+          <div class="innerContainer">
+              <div class="firstRow list">
+                <a title="lamore-è-impegno" 
+                href="/innamorati_del_pianeta.html#impegno"
+                >L'amore è impegno</a>
+                <a title="lamore-è-fatto-di-gesti" 
+                href="/innamorati_del_pianeta.html#fattoDiGesti"
+                >L'amore è fatto di gesti</a>
+                <a title="progetto_indonesia" 
+                href="/innamorati_del_pianeta/progetto_indonesia.html"
+                >Progetto Indonesia</a>
+                <a title="tips" 
+                href="/innamorati_del_pianeta/tips.html"
+                >Tips</a>
+              </div>
+            
+            <div class="secondRow">
+               <a title="cookiePolicy" 
+               href="#"
+               >Cookie policy</a>
+               <a title="termsOfUse" 
+               href="#"
+               >Termini di utilizzo</a>
+           </div>
+          </div>
+ 
+         </div>
+        
+         <button class="downButton" onClick="scrollUP()">
+          <img alt="downSvg" src="../assets/svg/upDown.svg"></img>
+          </button>
+          
     </footer> 
      <!--fine footer -->
   </body>

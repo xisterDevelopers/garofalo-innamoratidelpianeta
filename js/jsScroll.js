@@ -1,32 +1,27 @@
 // scrool trigger
 document.addEventListener("DOMContentLoaded", function(event){
 
-  const infograficaId = document.getElementById('infografica');
-  const infograficaPosition = infograficaId.offsetTop;
-  const infograficaHeight = infograficaId.offsetHeight;
+  const infograficaId = document.getElementById('infografica') ? document.getElementById('infografica') : null;
+  const infograficaPosition = infograficaId?.offsetTop;
+  const infograficaHeight = infograficaId?.offsetHeight;
 
-
-  const impegnoId = document.getElementById('impegno');
-  const impegnoHeight = impegnoId.offsetHeight;
-
-
-  const animationId = document.getElementById('animation');
+  const animationId = document.getElementById('animation') ? document.getElementById('animation') : null;
 
    const marginTop =  -(infograficaPosition - 200);
-   const ricicloRedId = document.getElementById('ricicloRed');
-   const ricicloRedHeight = ricicloRedId.offsetHeight;
+   const ricicloRedId = document.getElementById('ricicloRed') ? document.getElementById('ricicloRed') : null;
+   const ricicloRedHeight = ricicloRedId?.offsetHeight;
    const windowHeightPerCent = window.innerHeight * 15 / 100;
 
    //window.innerWidth > 989 ? ( (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? ricicloRedId.style.bottom = '0vh' :  ricicloRedId.style.bottom = '15vh') : '';
    //ricicloRedId.style.marginTop =     window.innerWidth > 989 ? marginTop : '60';
-   ricicloRedId.style.marginTop = '60';
 
-   let height = infograficaHeight + 50;
+    ricicloRedId ?  ricicloRedId.style.marginTop = '60' : null;
+     let height = infograficaHeight + 50;
+
   // window.innerWidth > 989 ?  '' : animationId.style.height =  height;
-   animationId.style.height =  height;
 
+  animationId ? animationId.style.height =  height : null ;
   const tmp = (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? (window.innerHeight - (ricicloRedHeight + (marginTop * (3/2))) ) : window.innerHeight * (100-15) / 100 - (ricicloRedHeight + (marginTop * (3/2))); 
-
 
     gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
     gsap.defaults({
@@ -104,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function(event){
      }
    });
 
-        aboutTl.eventCallback("onComplete", function() {
+     aboutTl.eventCallback("onComplete", function() {
 
         //   var action1 = gsap
         //   .timeline({
@@ -222,21 +217,22 @@ document.addEventListener("DOMContentLoaded", function(event){
     duration: 8000,
     ease: "ease"        
     })
-  });
+    });
 
-
+    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
     var action1M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
     scrollTrigger: {
       trigger: ".footer",
       scrub:true,
-     // markers: true,
+    //  markers: true,
       start: "-1000 60%",
       end: "bottom bottom",
-   }})
-   .to(".downButton", {
-    opacity: 1,
-    duration: 2000,
-    ease: "ease"        
-  })
+    }})
+      .to(".downButton", {
+      opacity: 1,
+      duration: 2000,
+      ease: "ease"        
+      })
 
-});
+  });
+
