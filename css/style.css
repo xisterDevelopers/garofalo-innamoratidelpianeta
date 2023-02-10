@@ -223,7 +223,9 @@ footer .secondRow {
 .container {
     background-color: #FFFFFF;
     position: relative;
-    padding-bottom: 4rem;
+}
+.tips, .progettoIndonesia {
+  padding-bottom: 4rem;
 }
 .fullVideo {
     width: 100%;
@@ -606,10 +608,6 @@ footer .secondRow {
      }
      .left {
       text-align: left !important;
-    }
-    .downButton {
-      /* transform: scale(0.5) rotate(-90deg); */
-      transform: scale(0.5);
     }
     .titleImg img {
       max-width: 90px;
