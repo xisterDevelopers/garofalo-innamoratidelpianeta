@@ -223,6 +223,7 @@ footer .secondRow {
 .container {
     background-color: #FFFFFF;
     position: relative;
+    padding-bottom: 4rem;
 }
 .fullVideo {
     width: 100%;
@@ -880,6 +881,9 @@ section {
     .swiper {
       padding-bottom: 130px;
     }
+  .progettoIndonesia .swiper {
+    padding-bottom: 0px;
+  }
   }
 
   @media screen and (max-width:992px)  {
@@ -1045,8 +1049,9 @@ section {
     padding-right: 2rem;
 
     display: grid;
-    grid-template-columns: 48% 48%;
-    gap: 4%;
+    grid-template-columns: 47% 47%;
+    justify-content: space-between;
+    height: fit-content;
   }
      .tips .grid .text, .tips .grid .contentWidth  {
       width: 100%;
@@ -1269,7 +1274,7 @@ section {
     .progettoIndonesia .swiper-wrapper {
       height: auto;
       width: auto;
-      padding-bottom: 5rem;
+      padding-bottom: 1rem;
     }
     .progettoIndonesia .swiper-slide {
       width: auto;
