@@ -300,16 +300,16 @@ footer .secondRow {
     text-align: center;
    }
 .text .one {
-    background-image: url("../assets/svg/Vector\ 1.svg") ;
+    background-image: url("../assets/svg/Vector-1.svg") ;
    }
 .text .two {
-    background-image: url("../assets/svg/Vector\ 2.svg") ;
+    background-image: url("../assets/svg/Vector-2.svg") ;
    }
 .text .three {
-    background-image: url("../assets/svg/Vector\ 3.svg") ;
+    background-image: url("../assets/svg/Vector-3.svg") ;
    }
 .text .four {
-    background-image: url("../assets/svg/Vector\ 4.svg") ;
+    background-image: url("../assets/svg/Vector-4.svg") ;
    }
 .infograficaPasta {
      position: relative;
@@ -673,7 +673,7 @@ footer .secondRow {
 }
 
 .buttonRed a {
-  background: url("../assets/svg/Vector\ button.svg");
+  background: url("../assets/svg/Vector-button.svg");
   color: #FFFFFF;
   background-size: cover;
   background-repeat: no-repeat;
