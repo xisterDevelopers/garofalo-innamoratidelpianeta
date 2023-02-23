@@ -125,13 +125,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
   setTimeout(function() {
     scrollAncora('fattoDiGesti')
   }
-    , 1000)
+    , 3000)
  }
  else if(window.location.href.includes('#impegno')) {
   setTimeout(function() {  
     scrollAncora('impegno')
   }
-    , 1000)
+    , 3000)
  }
 
 
