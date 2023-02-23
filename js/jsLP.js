@@ -52,6 +52,7 @@ function scrollUP () {
   });
 }
 
+
 // -------------------------------------------------------------------- READY --------------------------------------------------------------------------------------
 
 ready('.counter', (stat) => {
@@ -119,6 +120,21 @@ ready('.counter', (stat) => {
 
 window.addEventListener('DOMContentLoaded', (event) => {
    event.preventDefault();
+// -------------------------------------------------------------------- SCROLL ANCORA  --------------------------------------------------------------------------------------
+ if(window.location.href.includes('#fattoDiGesti')) {
+  setTimeout(function() {
+    scrollAncora('fattoDiGesti')
+  }
+    , 1000)
+ }
+ else if(window.location.href.includes('#impegno')) {
+  setTimeout(function() {  
+    scrollAncora('impegno')
+  }
+    , 1000)
+ }
+
+
     // -------------------------------------------------------------------- CLICK FUORI DROP DOWN  --------------------------------------------------------------------------------------
     function handleClickOutside (event) {
       var header = document.getElementById("header");
