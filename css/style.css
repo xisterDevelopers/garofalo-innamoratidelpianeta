@@ -175,15 +175,17 @@ footer .secondRow {
   text-decoration: none;
 }
 
-.collpsedList {
+.collapsedList {
     top: -100%; 
     margin: auto;
     width: 100%;
     position: absolute;
     left: 0;
     z-index: 0;
-    text-align: center;
-    background-color: #292929;
+    /* text-align: center; */
+    background-image: url("../assets/svg/VectorBurgerMenu.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
     transition-delay: 2s;
     -webkit-transition: all 1s cubic-bezier(.19,1,.22,1);
     -moz-transition: all 1s cubic-bezier(.19,1,.22,1);
@@ -208,14 +210,17 @@ footer .secondRow {
     transition: all 1s cubic-bezier(.19,1,.22,1);
 }
 
-.collpsedList a {
+.collapsedList a {
     cursor: pointer;
     color: #FFFFFF; 
     text-decoration: none;
     display: block;
     text-align: left;
     width: fit-content;
-    margin: 1rem auto;
+    margin: 1rem;
+  }
+  .collapsedList img {
+    margin: 0 1rem;
   }
 
 
@@ -663,6 +668,24 @@ footer .secondRow {
     border-radius: 4px;
     cursor: pointer;
   }
+  .collapse span:nth-child(1){
+    transform: rotate(45deg);
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+    position: relative;
+    top: 6px;
+  }
+  .collapse span:nth-child(2){
+    opacity: 0;
+    transform: translate(20px);
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+  }
+  .collapse span:nth-child(3){
+    transform: rotate(-45deg);
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+    position: relative;
+    top: -6px;
+  }
+
   .burger:focus {
     outline: 0;
   }
