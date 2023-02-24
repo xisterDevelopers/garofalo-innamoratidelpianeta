@@ -301,15 +301,34 @@ footer .secondRow {
    }
 .text .one {
     background-image: url("../assets/svg/Vector-1.svg") ;
+    padding: 1.3rem 1rem 1rem 1rem !important;
+    background-size: 100% 100%;
    }
 .text .two {
     background-image: url("../assets/svg/Vector-2.svg") ;
+    padding: 1.3rem 2rem 1rem 2rem !important;
+    background-size: 100% 100%;
    }
 .text .three {
     background-image: url("../assets/svg/Vector-3.svg") ;
+    text-align: left;
+    width: min-content;
+    padding: 1.5rem 2rem !important;
    }
+   @media screen and (min-width: 856px) {
+    .text .three {
+      white-space: nowrap;
+    }
+  }
+  @media screen and (min-width: 475px) and (max-width: 600px) {
+    .text .three {
+      white-space: nowrap;
+    }
+ }
+
 .text .four {
     background-image: url("../assets/svg/Vector-4.svg") ;
+    background-size: 100% 100%;
    }
 .infograficaPasta {
      position: relative;
@@ -532,16 +551,12 @@ footer .secondRow {
         margin-bottom: 2.5rem;
         padding-top: 0;
     }
-
 }
-
 @media screen and (max-width: 800px) {
 
-    .containerRicicloRed {
-        max-width: 1500px;
-    }
     .ricicloRed {
-        width: calc(100%  - 3rem);
+        width: 100%;
+        background-image: url("../assets/svg/VectorRicicloRedMobile.svg");
     }
     .ricicloRed .text .nunito {
         text-align: center;
@@ -551,11 +566,15 @@ footer .secondRow {
         margin-top: 4rem;
         text-align: center;
     }
+
 }
 
 @media screen and (max-width: 600px) {
     .brandon {
         font-size: 24px !important;
+    }
+    .bigB {
+      font-size: 38px !important;
     }
     .redBrandon {
         font-size: 24px !important;
@@ -603,6 +622,11 @@ footer .secondRow {
   }
 }
 @media screen and (max-width: 400px) {
+    .text .three {
+      margin-left: 0;
+      margin-right: 0;
+    }
+ 
     .flexNumber .brandon {
         font-size: 40px !important;
      }
@@ -611,7 +635,16 @@ footer .secondRow {
     }
     .titleImg img {
       max-width: 90px;
-  }
+   }
+   .text {
+    padding-top: 1.375rem;
+   }
+   .secondSection .text {
+    padding-top: 2.375rem;
+   }
+   .titleImg img {
+    max-width: 69px;
+}
 }
 
 
