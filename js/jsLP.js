@@ -40,7 +40,7 @@ function collapse () {
 function scrollAncora (id) {
     collapse();
     window.scroll({
-      top: document.getElementById(id)?.getBoundingClientRect().top + window.scrollY - 100,
+      top: document.getElementById(id)?.getBoundingClientRect().top + window.scrollY - 200,
       behavior: 'smooth'
     });
 }
@@ -123,13 +123,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
 // -------------------------------------------------------------------- SCROLL ANCORA  --------------------------------------------------------------------------------------
  if(window.location.href.includes('#fattoDiGesti')) {
   setTimeout(function() {
-    scrollAncora('fattoDiGesti')
+    scrollAncora('fattoDiGesti');
+    collapse();
   }
     , 3000)
  }
  else if(window.location.href.includes('#impegno')) {
   setTimeout(function() {  
-    scrollAncora('impegno')
+    scrollAncora('impegno');
+    collapse();
   }
     , 3000)
  }

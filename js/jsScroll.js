@@ -49,6 +49,11 @@ document.addEventListener("DOMContentLoaded", function(event){
         duration: 2000,
         ease: "ease"
       })
+      .to(".arrow1line", {
+        strokeDashoffset: 90,
+        duration: 500,
+        ease: "ease",
+      })
       .to(".arrow1", {
         strokeDashoffset: 90,
         duration: 500,
@@ -142,25 +147,35 @@ document.addEventListener("DOMContentLoaded", function(event){
 
         var action2 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
       scrollTrigger: {
-        trigger: ".arrow2D",
+        trigger: ".arrow2Dline",
         scrub:true,
         //markers: true,
         start: "-100px 60%",
       }})
-      .to(".arrow2D", {
+      .to(".arrow2Dline", {
        strokeDashoffset: 80,
        duration: 8000,
        ease: "ease"        
      })
+     .to(".arrow2D", {
+      strokeDashoffset: 80,
+      duration: 8000,
+      ease: "ease"        
+    })
 
      var action2M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
      scrollTrigger: {
-       trigger: ".arrow2M",
+       trigger: ".arrow2Mline",
        scrub:true,
        //markers: true,
        start: "-100px 60%",
      }})
-     .to(".arrow2M", {
+     .to(".arrow2Mline", {
+      strokeDashoffset: 80,
+      duration: 8000,
+      ease: "ease"        
+    })
+    .to(".arrow2M", {
       strokeDashoffset: 80,
       duration: 8000,
       ease: "ease"        
@@ -168,12 +183,17 @@ document.addEventListener("DOMContentLoaded", function(event){
 
       var action3 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
      scrollTrigger: {
-       trigger: ".arrow3D",
+       trigger: ".arrow3Dline",
        scrub:true,
        //markers: true,
        start: "top 60%",
      }})
-     .to(".arrow3D", {
+     .to(".arrow3Dline", {
+      strokeDashoffset: 80,
+      duration: 8000,
+      ease: "ease"        
+    })
+    .to(".arrow3D", {
       strokeDashoffset: 80,
       duration: 8000,
       ease: "ease"        
@@ -181,43 +201,59 @@ document.addEventListener("DOMContentLoaded", function(event){
 
     var action3M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
     scrollTrigger: {
-      trigger: ".arrow3M",
+      trigger: ".arrow3Mline",
       scrub:true,
       //markers: true,
       start: "top 60%",
     }})
-    .to(".arrow3M", {
+    .to(".arrow3Mline", {
      strokeDashoffset: 80,
      duration: 8000,
      ease: "ease"        
    })
+   .to(".arrow3M", {
+    strokeDashoffset: 80,
+    duration: 8000,
+    ease: "ease"        
+  })
 
    var action4 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
     scrollTrigger: {
-      trigger: ".arrow4D",
+      trigger: ".arrow4Dline",
       scrub:true,
       //markers: true,
       start: "top 60%",
     }})
-    .to(".arrow4D", {
+    .to(".arrow4Dline", {
      strokeDashoffset: 80,
      duration: 8000,
      ease: "ease"        
    })
+   .to(".arrow4D", {
+    strokeDashoffset: 80,
+    duration: 8000,
+    ease: "ease"        
+  })
 
    var action4M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
    scrollTrigger: {
-     trigger: ".arrow4M",
+     trigger: ".arrow4Mline",
      scrub:true,
      //markers: true,
      start: "top 60%",
    }})
-   .to(".arrow4M", {
+   .to(".arrow4Mline", {
     strokeDashoffset: 80,
     duration: 8000,
     ease: "ease"        
     })
+    .to(".arrow4M", {
+      strokeDashoffset: 80,
+      duration: 8000,
+      ease: "ease"        
+      })
     });
+    
 
     gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
     var action1M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },

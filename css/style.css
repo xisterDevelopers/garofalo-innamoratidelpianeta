@@ -73,7 +73,9 @@ footer .secondRow {
 }
 .headerContainer {
     display: flex;
-    z-index: 1;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
     justify-content: space-between;
 }
 .headerContainer .logo, .footerContainer .logo {
@@ -196,11 +198,11 @@ footer .secondRow {
 
 .collapsed {
     display: block;
-    position: absolute;
+    position: fixed;
     width: 100%;
     left: 0;
     top: 100px;
-    z-index: 1;
+    z-index: 3;
     padding: 2.2rem 0;
     transition-delay: 2s;
     -webkit-transition: all 1s cubic-bezier(.19,1,.22,1);
@@ -228,6 +230,7 @@ footer .secondRow {
 .container {
     background-color: #FFFFFF;
     position: relative;
+    padding-top: 101px;
 }
 .tips, .progettoIndonesia {
   padding-bottom: 4rem;
@@ -700,7 +703,7 @@ footer .secondRow {
     margin-top: 4px;
   }
   @media (min-width: 1000px) {
-    .burger {
+    .burger, .collapsedList {
       display: none;
     }
   }
@@ -919,7 +922,7 @@ section {
     width: auto;
   }
   .swiper-slide {
-    width: auto;
+    width: auto !important;
   }
   .swiper {
     max-width: 1500px;
@@ -979,7 +982,7 @@ section {
     }
 
     .card .absolute {
-       top: 270px; 
+      top: 270px; 
       padding-left: 50px;
     }
     .responsiveB, .responsiveSmallB {
