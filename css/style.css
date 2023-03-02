@@ -338,6 +338,10 @@ footer .secondRow {
     background-image: url("../assets/svg/Vector-4.svg") ;
     background-size: 100% 100%;
    }
+
+   #impegno {
+    padding-top: 2rem;
+   }
 .infograficaPasta {
      position: relative;
     overflow: hidden; 
