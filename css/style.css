@@ -1065,9 +1065,11 @@ section {
    .desktop {
     display: none !important;
   }
-
   .mobile {
     display: block !important;
+  }
+  .fullVideo {
+    aspect-ratio: 8 / 10;
   }
   }
 
