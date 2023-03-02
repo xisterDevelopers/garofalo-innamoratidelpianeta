@@ -1376,3 +1376,20 @@ section {
     #ricicloRed {
       z-index: 0;
     }
+
+
+    /* iubenda */
+
+
+    .container-cookie {
+      max-width: 1500px;
+      margin: auto;
+      padding: 2rem 2rem 0rem !important;
+    }
+    .iub_container {
+      margin-bottom: 0 !important;
+    }
+    .iub_content {
+      padding-left: 0rem !important;
+      padding-right: 0rem !important;
+    }
