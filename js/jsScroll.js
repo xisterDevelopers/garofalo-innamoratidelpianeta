@@ -8,20 +8,20 @@ document.addEventListener("DOMContentLoaded", function(event){
   const animationId = document.getElementById('animation') ? document.getElementById('animation') : null;
 
    const marginTop =  -(infograficaPosition - 200);
-   const ricicloRedId = document.getElementById('ricicloRed') ? document.getElementById('ricicloRed') : null;
-   const ricicloRedHeight = ricicloRedId?.offsetHeight;
+   const ricicloId = document.getElementById('riciclo') ? document.getElementById('riciclo') : null;
+   const ricicloHeight = ricicloId?.offsetHeight;
    const windowHeightPerCent = window.innerHeight * 15 / 100;
 
-   //window.innerWidth > 989 ? ( (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? ricicloRedId.style.bottom = '0vh' :  ricicloRedId.style.bottom = '15vh') : '';
-   //ricicloRedId.style.marginTop =     window.innerWidth > 989 ? marginTop : '60';
+   //window.innerWidth > 989 ? ( (windowHeightPerCent + ricicloHeight)  > window.innerHeight ? ricicloId.style.bottom = '0vh' :  ricicloId.style.bottom = '15vh') : '';
+   //ricicloId.style.marginTop =     window.innerWidth > 989 ? marginTop : '60';
 
-    ricicloRedId ?  ricicloRedId.style.marginTop = '60' : null;
+    ricicloId ?  ricicloId.style.marginTop = '60' : null;
      let height = infograficaHeight + 50;
 
   // window.innerWidth > 989 ?  '' : animationId.style.height =  height;
 
   animationId ? animationId.style.height =  height : null ;
-  const tmp = (windowHeightPerCent + ricicloRedHeight)  > window.innerHeight ? (window.innerHeight - (ricicloRedHeight + (marginTop * (3/2))) ) : window.innerHeight * (100-15) / 100 - (ricicloRedHeight + (marginTop * (3/2))); 
+  const tmp = (windowHeightPerCent + ricicloHeight)  > window.innerHeight ? (window.innerHeight - (ricicloHeight + (marginTop * (3/2))) ) : window.innerHeight * (100-15) / 100 - (ricicloHeight + (marginTop * (3/2))); 
 
     gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
     gsap.defaults({
@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         ease: "ease",
       })
    
+    if(window.innerWidth > 599) {
     ScrollTrigger.create({
        onUpdate: ({progress}) => aboutTl.progress() < progress ? aboutTl.progress(progress) : null,
       // onUpdate: self => console.log("progress:", self.progress),
@@ -79,11 +80,12 @@ document.addEventListener("DOMContentLoaded", function(event){
         self.animation.progress(1)
       }
     });
+  }
 
   //----------------------------------
     
     let secondTl = gsap
-    .to("#ricicloRed", {
+    .to("#riciclo", {
       opacity: 1,
       duration: 1000,
       ease: "ease-in"
@@ -94,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(event){
      trigger: "#animation",
       // start: window.innerWidth > 989 ? `bottom ${tmp}px` : 'bottom bottom',
       start: 'bottom bottom',
-     end: `bottom ${tmp - ricicloRedHeight / 4}px`,
+     end: `bottom ${tmp - ricicloHeight / 4}px`,
      id: "#animation",
      scrub: true,
      //markers: true,
@@ -106,51 +108,12 @@ document.addEventListener("DOMContentLoaded", function(event){
 
      aboutTl.eventCallback("onComplete", function() {
 
-        //   var action1 = gsap
-        //   .timeline({
-        //    defaults: {
-        //      duration: 2000, 
-        //      ease:'ease' 
-        //    },
-        //   scrollTrigger: {
-        //     trigger: ".arrow1D",
-        //     scrub:true,
-        //     //markers: true,
-        //     start: `top ${-infograficaPosition + 100}px`,
-        //   }
-        //  })
-        //   .to(".arrow1D", {
-        //    strokeDashoffset: 80,
-        //    duration: 8000,
-        //    ease: "ease",     
-        //  })
-
-
-        //  var action1M = gsap
-        //  .timeline({
-        //   defaults: {
-        //     duration: 2000, 
-        //     ease:'ease' 
-        //   },
-        //  scrollTrigger: {
-        //    trigger: ".arrow1M",
-        //    scrub:true,
-        //    //markers: true,
-        //    start: "100px 300px",
-        //  }
-        // })
-        //  .to(".arrow1M", {
-        //   strokeDashoffset: 80,
-        //   duration: 8000,
-        //   ease: "ease",     
-        // })
-
-        var action2 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
+      gsap.timeline({defaults: {duration: 2000, ease:'ease' },
       scrollTrigger: {
         trigger: ".arrow2Dline",
         scrub:true,
         //markers: true,
-        start: "-100px 60%",
+        start: "-100px 70%",
       }})
       .to(".arrow2Dline", {
        strokeDashoffset: 80,
@@ -163,30 +126,12 @@ document.addEventListener("DOMContentLoaded", function(event){
       ease: "ease"        
     })
 
-     var action2M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-     scrollTrigger: {
-       trigger: ".arrow2Mline",
-       scrub:true,
-       //markers: true,
-       start: "-100px 60%",
-     }})
-     .to(".arrow2Mline", {
-      strokeDashoffset: 80,
-      duration: 8000,
-      ease: "ease"        
-    })
-    .to(".arrow2M", {
-      strokeDashoffset: 80,
-      duration: 8000,
-      ease: "ease"        
-    })
-
-      var action3 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
+     gsap.timeline({defaults: {duration: 2000, ease:'ease' },
      scrollTrigger: {
        trigger: ".arrow3Dline",
        scrub:true,
        //markers: true,
-       start: "top 60%",
+       start: "top 70%",
      }})
      .to(".arrow3Dline", {
       strokeDashoffset: 80,
@@ -199,30 +144,12 @@ document.addEventListener("DOMContentLoaded", function(event){
       ease: "ease"        
     })
 
-    var action3M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-    scrollTrigger: {
-      trigger: ".arrow3Mline",
-      scrub:true,
-      //markers: true,
-      start: "top 60%",
-    }})
-    .to(".arrow3Mline", {
-     strokeDashoffset: 80,
-     duration: 8000,
-     ease: "ease"        
-   })
-   .to(".arrow3M", {
-    strokeDashoffset: 80,
-    duration: 8000,
-    ease: "ease"        
-  })
-
-   var action4 = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
+    gsap.timeline({defaults: {duration: 2000, ease:'ease' },
     scrollTrigger: {
       trigger: ".arrow4Dline",
       scrub:true,
       //markers: true,
-      start: "top 60%",
+      start: "top 70%",
     }})
     .to(".arrow4Dline", {
      strokeDashoffset: 80,
@@ -234,29 +161,9 @@ document.addEventListener("DOMContentLoaded", function(event){
     duration: 8000,
     ease: "ease"        
   })
-
-   var action4M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
-   scrollTrigger: {
-     trigger: ".arrow4Mline",
-     scrub:true,
-     //markers: true,
-     start: "top 60%",
-   }})
-   .to(".arrow4Mline", {
-    strokeDashoffset: 80,
-    duration: 8000,
-    ease: "ease"        
-    })
-    .to(".arrow4M", {
-      strokeDashoffset: 80,
-      duration: 8000,
-      ease: "ease"        
-      })
-    });
+});
     
-
-    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
-    var action1M = gsap.timeline({defaults: {duration: 2000, ease:'ease' },
+    gsap.timeline({defaults: {duration: 2000, ease:'ease' },
     scrollTrigger: {
       trigger: ".footer",
       scrub:true,

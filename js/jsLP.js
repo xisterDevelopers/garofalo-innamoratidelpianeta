@@ -15,12 +15,14 @@ const ready = (selector, callback) => {
 
 
 // ------------------------------------------------------------------- BURGER MENU DROP DOWN --------------------------------------------------------------------------------------
-function collapse () {
+function collapse (bool) {
+
   var breakpointMobile = 1000;
   var header = document.getElementById("header");
   var collapsedList = document.getElementById("collapsedList");
   var collapse = document.getElementById("burger");
-
+  
+  if(!bool) {
   if((window.document.body.clientWidth < breakpointMobile)) {
     if(collapse.classList.contains('collapse')) {
       collapse.classList.remove("collapse");
@@ -34,11 +36,17 @@ function collapse () {
     }
   }
 }
+  else {
+  collapse.classList.remove("collapse");
+  collapsedList.classList.remove("collapsed");
+  header.classList.remove("collapsedHeader")
+}
+}
 
 // ------------------------------------------------------------------- SCROLL ANCORE MENU' --------------------------------------------------------------------------------------
 
 function scrollAncora (id) {
-    collapse();
+    collapse(true);
     window.scroll({
       top: document.getElementById(id)?.getBoundingClientRect().top + window.scrollY - 200,
       behavior: 'smooth'
@@ -124,14 +132,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
  if(window.location.href.includes('#fattoDiGesti')) {
   setTimeout(function() {
     scrollAncora('fattoDiGesti');
-    collapse();
+    collapse(true);
   }
     , 3000)
  }
  else if(window.location.href.includes('#impegno')) {
   setTimeout(function() {  
     scrollAncora('impegno');
-    collapse();
+    collapse(true);
   }
     , 3000)
  }
@@ -141,7 +149,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     function handleClickOutside (event) {
       var header = document.getElementById("header");
     if(!header.contains(event.target)) {
-        collapse();
+        collapse(true);
     }
     }
     window.addEventListener("click", handleClickOutside, true);

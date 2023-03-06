@@ -9,7 +9,7 @@
 
 body { 
     color: #292929; 
-    background-color: #cbc4c4;
+    background-color: #ffffff;
     padding: 0;
     margin: 0;
     font-weight: 400;
@@ -222,7 +222,10 @@ footer .secondRow {
     margin: 1rem;
   }
   .collapsedList img {
-    margin: 0 1rem;
+    position: relative;
+    left: 1rem;
+    right: 1rem;
+    width: calc(100% - 2rem);
   }
 
 
@@ -279,6 +282,59 @@ footer .secondRow {
     line-height: 30px;
 }
 
+.text .redText {
+  color: #E01F26;
+}
+.underline, .underlineMinWidth, .underlineMin, .underlineBig, .underlineBigWidth {
+  padding-bottom: 10px;
+  width: fit-content;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  white-space: nowrap;
+}
+.underlineBigWidth {
+  margin: auto;
+}
+
+.underlineMin::after {
+  display: block;
+ }
+ .underlineBig::after {
+  display: block;
+ }
+.underlineMinWidth::after {
+  display: none;
+}
+.underlineBigWidth::after {
+  display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .underline, .underlineMinWidth, .underlineMin, .underlineBig, .underlineBigWidth{
+    margin: 0 !important;
+  }
+  .underlineMin::after {
+   display: none;
+  }
+.underlineMinWidth::after {
+  display: block;
+}
+
+}
+.underline::after, .underlineMinWidth::after, .underlineMin::after, .underlineBig::after, .underlineBigWidth::after {
+  content: '';
+  background: url("../assets/svg/red-line.svg");
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: 100%;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+}
+
 .ref {
   font-size: 12px;
 }
@@ -299,10 +355,10 @@ footer .secondRow {
     text-align: center; 
     max-width: 1000px;
    }
-.text .brandon span {
+/* .text .brandon span {
     margin: 1rem auto;
     line-height: 4rem;
-   } 
+   }  */
  .text .redBrandon {
     margin: 1.5rem auto;
     text-align: center;
@@ -395,8 +451,8 @@ footer .secondRow {
 .titleImg .image {
     width: fit-content;
 }
-.ricicloRed {
-    background-image: url("../assets/svg/VectorRicicloRed.svg");
+.riciclo {
+    background-image: url("../assets/svg/VectorRiciclo.svg");
     background-repeat: no-repeat;
     width: calc(100%  - 5rem);
     max-width: 1500px;
@@ -404,28 +460,27 @@ footer .secondRow {
     margin: auto;
     position: relative;
 }
-.ricicloRed .innerContainer {
+.riciclo .innerContainer {
     padding: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: auto;
 }
-.ricicloRed .text {
+.riciclo .text {
     margin-top: 0;
 }
-.ricicloRed .image {
+.riciclo .image {
     position: relative;
     display: flex;
-    padding: 1rem;
 }
-.ricicloRed .image img {
+.riciclo .image img {
     width: 100%;
 }
-.ricicloRed .brandon {
+.riciclo .brandon {
     color: #FFFFFF;
     text-align: left;
 }
-.ricicloRed .nunito {
+.riciclo .nunito {
     color: #FFFFFF;
     text-align: left;
     line-height: 30px;
@@ -523,7 +578,7 @@ footer .secondRow {
     .flexNumber img {
         max-width: 50px !important;
      }
-     .ricicloRed .text .brandon {
+     .riciclo .text .brandon {
         font-size: 40px;
         margin-top: 4rem;
     }
@@ -556,24 +611,24 @@ footer .secondRow {
     .flex .column {
         width: 100% !important;
     }
-    .ricicloRed .innerContainer {
+    .riciclo .innerContainer {
       display: block;
     }
-    .ricicloRed .text {
+    .riciclo .text {
         margin-bottom: 2.5rem;
         padding-top: 0;
     }
 }
 @media screen and (max-width: 800px) {
 
-    .ricicloRed {
+    .riciclo {
         width: 100%;
-        background-image: url("../assets/svg/VectorRicicloRedMobile.svg");
+        background-image: url("../assets/svg/VectorRicicloMobile.svg");
     }
-    .ricicloRed .text .nunito {
+    .riciclo .text .nunito {
         text-align: center;
     }
-    .ricicloRed .text .brandon {
+    .riciclo .text .brandon {
         font-size: 32px;
         margin-top: 4rem;
         text-align: center;
@@ -581,9 +636,10 @@ footer .secondRow {
 
 }
 
+
 @media screen and (max-width: 600px) {
     .brandon {
-        font-size: 23px !important;
+        font-size: 21px !important;
     }
     .bigB {
       font-size: 38px !important;
@@ -593,12 +649,13 @@ footer .secondRow {
         padding: 1rem 0.5rem 0.5rem !important;
     }
 
+
     .nunito {
       font-size: 20px !important;
       line-height: 26px;
     }
 
-    .ricicloRed .nunito {
+    .riciclo .nunito {
       margin-top: 1rem;
     }
     .ricicloGrey .innerContainer {
@@ -615,7 +672,7 @@ footer .secondRow {
     left: -1rem;
   }
   section {
-    margin-top: 1rem !important;
+    margin-top: 0rem !important;
   }
   .firstSection {
     margin-top: 0rem !important;
@@ -632,6 +689,9 @@ footer .secondRow {
   .line {
     margin: auto !important;
   }
+  .text {
+    padding-top: 1.375rem;
+   }
 }
 @media screen and (max-width: 400px) {
     .text .three {
@@ -648,15 +708,39 @@ footer .secondRow {
     .titleImg img {
       max-width: 90px;
    }
-   .text {
-    padding-top: 1.375rem;
-   }
    .secondSection .text {
     padding-top: 2.375rem;
    }
    .titleImg img {
     max-width: 69px;
+  }
+  .nunito {
+    font-size: 17px !important;
+    line-height: 26px;
+  }
+  .minWidth {
+    display: block !important;
+  }
 }
+@media screen and (max-width: 550px) {
+  .bigWidth {
+    display: block !important;
+   }
+   .underlineBig::after {
+    display: none;
+  }
+  .underlineBigWidth::after {
+    display: block;
+  }
+}
+
+.minWidth, .bigWidth {
+  display: flex;
+  gap: 0.4rem;
+}
+
+#fattoDiGesti span {
+  line-height: 3rem;
 }
 
 
@@ -925,7 +1009,7 @@ section {
     height: auto;
     width: auto;
   }
-  .swiper-slide {
+  .mySwiper .swiper-slide {
     width: auto !important;
   }
   .swiper {
@@ -935,6 +1019,9 @@ section {
     display: none;
     position: relative;
   }
+  /* .swiper-pack .background_mobile {
+    width: 100%;
+  } */
   @media screen and (max-width:1200px) {
     .card .absolute {
       top: 56%;
@@ -942,9 +1029,10 @@ section {
     .swiper {
       padding-bottom: 130px;
     }
-  .progettoIndonesia .swiper {
-    padding-bottom: 0px;
+  .progettoIndonesia .swiper, .swiper-pack {
+    padding-bottom: 0px !important;
   }
+
   }
 
   @media screen and (max-width:992px)  {
@@ -1007,6 +1095,9 @@ section {
       padding-bottom: 300px;
       padding-right: 10px;
     }
+    .swiper-pack {
+      padding-left: 10px;
+    }
     .card {
       margin-left: 0;
     }
@@ -1033,7 +1124,7 @@ section {
     background-color: transparent;
     text-align: center;
   }
-  #ricicloRed {
+  #riciclo {
     position: sticky;
   }
 
@@ -1061,7 +1152,9 @@ section {
    #animation {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    height: auto !important;
    }
+
    .desktop {
     display: none !important;
   }
@@ -1070,6 +1163,13 @@ section {
   }
   .fullVideo {
     aspect-ratio: 8 / 10;
+  }
+  #impegno {
+    padding-top: 0;
+  }
+  #animation {
+    padding-top: 0;
+    margin-top: 0 !important;
   }
   }
 
@@ -1379,7 +1479,7 @@ section {
       z-index: 1;
     }
 
-    #ricicloRed {
+    #riciclo {
       z-index: 0;
     }
 
